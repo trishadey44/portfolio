@@ -1,0 +1,226 @@
+/* ── BART palette: dark navy + BART brand colors ─── */
+.wrapper {
+  --bart-bg:     #0D1B2A;
+  --bart-card:   #152032;
+  --bart-card2:  #1C2D42;
+  --bart-border: rgba(255,255,255,0.08);
+  --bart-blue:   #0099CD;
+  --bart-yellow: #FFD520;
+  --bart-text:   #FFFFFF;
+  --bart-muted:  rgba(255,255,255,0.5);
+  --bart-muted2: rgba(255,255,255,0.25);
+  display: flex; flex-direction: column; align-items: center; width: 100%;
+}
+
+/* Tabs */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+.tab { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; padding: 6px 14px; border: 1.5px solid var(--border); border-radius: 100px; background: none; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+.tab:hover { border-color: #0099CD; color: #0099CD; }
+.tabOn { background: #0099CD; color: white; border-color: #0099CD; }
+
+/* Phone */
+.phoneWrap { display: flex; justify-content: center; }
+.phone { width: 320px; background: var(--bart-bg); border-radius: 44px; border: 8px solid #0A1520; box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,153,205,0.2); display: flex; flex-direction: column; overflow: hidden; }
+.notch { width: 90px; height: 24px; background: #0A1520; border-radius: 0 0 14px 14px; margin: 0 auto; }
+.phoneInner { flex: 1; display: flex; flex-direction: column; min-height: 580px; overflow: hidden; }
+.content { flex: 1; overflow-y: auto; background: var(--bart-bg); scrollbar-width: none; }
+.content::-webkit-scrollbar { display: none; }
+.homeBar { height: 18px; display: flex; align-items: center; justify-content: center; background: var(--bart-bg); }
+.homeBar::after { content: ''; width: 90px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+/* Bottom nav */
+.bottomNav { display: flex; background: #0A1520; border-top: 1px solid var(--bart-border); padding: 6px 0 2px; }
+.bnItem { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; background: none; border: none; cursor: pointer; padding: 4px 0; font-family: var(--font-body); }
+.bnIcon { font-size: 1.1rem; color: var(--bart-muted); }
+.bnLabel { font-size: 0.6rem; color: var(--bart-muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+.bnActive .bnIcon { color: var(--bart-yellow); }
+.bnActive .bnLabel { color: var(--bart-yellow); font-weight: 700; }
+
+/* Shared */
+.screen { padding: 14px 16px 16px; }
+.pageHeader { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.pageTitle { font-family: var(--font-display); font-size: 1.2rem; font-weight: 900; color: var(--bart-text); }
+.backBtn { background: none; border: none; font-size: 0.82rem; color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); padding: 0; flex-shrink: 0; }
+.section { margin-bottom: 18px; }
+.sectionHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sectionLabel { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); }
+.sectionLink { font-size: 0.72rem; color: var(--bart-blue); cursor: pointer; }
+
+/* Line dots */
+.dot { display: inline-block; width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+.dotSmall { display: inline-block; width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+/* Elevator status */
+.elevStatus { font-size: 0.65rem; font-weight: 600; font-family: var(--font-mono); }
+
+/* ── HOME ───────────────────────────────────────────── */
+.homeHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.homeTime { font-family: var(--font-mono); font-size: 0.65rem; color: var(--bart-muted); margin-bottom: 2px; }
+.homeTitle { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--bart-text); }
+.bartLogo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: var(--bart-text); font-style: italic; }
+.bartLogo span { color: var(--bart-blue); }
+
+.alertBanner { display: flex; align-items: center; gap: 10px; background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); border-radius: 10px; padding: 10px 12px; margin-bottom: 16px; cursor: pointer; }
+.alertIcon { font-size: 1rem; color: #F5A623; flex-shrink: 0; }
+.alertTitle { font-size: 0.78rem; font-weight: 700; color: #F5A623; }
+.alertBody { font-size: 0.68rem; color: var(--bart-muted); margin-top: 1px; }
+.alertChev { color: var(--bart-muted); margin-left: auto; }
+
+.favCard { background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; transition: border-color 0.15s; }
+.favCard:hover { border-color: var(--bart-blue); }
+.favCardTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.favName { font-size: 0.88rem; font-weight: 700; color: var(--bart-text); margin-bottom: 5px; font-family: var(--font-display); }
+.favLines { display: flex; align-items: center; gap: 5px; }
+.favStar { color: var(--bart-yellow); font-size: 1rem; }
+.depList { display: flex; flex-direction: column; gap: 5px; border-top: 1px solid var(--bart-border); padding-top: 8px; }
+.depRow { display: flex; align-items: center; gap: 8px; }
+.depText { font-size: 0.75rem; color: var(--bart-muted); flex: 1; }
+.depMin { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; }
+
+.mapTeaser { background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 14px; overflow: hidden; }
+.mapSvg { width: 100%; height: 140px; background: var(--bart-card); display: block; }
+.mapLegend { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--bart-border); }
+.mapLegendItem { display: flex; align-items: center; gap: 4px; font-size: 0.62rem; color: var(--bart-muted); font-family: var(--font-mono); }
+.mapLegendDot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── STATIONS ───────────────────────────────────────── */
+.searchBar { display: flex; align-items: center; gap: 8px; background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; }
+.searchIcon { color: var(--bart-muted); font-size: 1rem; }
+.searchInput { background: none; border: none; color: var(--bart-text); font-family: var(--font-body); font-size: 0.82rem; outline: none; flex: 1; }
+.searchInput::placeholder { color: var(--bart-muted); }
+
+.lineFilters { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+.lineChip { border: 1.5px solid var(--lc, #0099CD); border-radius: 20px; padding: 4px 10px; font-size: 0.68rem; font-weight: 600; color: var(--lc, #0099CD); background: none; cursor: pointer; font-family: var(--font-mono); transition: all 0.12s; }
+.lineChipOn { background: var(--lc); color: #000; }
+
+.stationGroupLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 6px; }
+
+.stationList { display: flex; flex-direction: column; gap: 0; }
+.stationRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: var(--bart-card); border-bottom: 1px solid var(--bart-border); cursor: pointer; transition: background 0.1s; }
+.stationRow:first-child { border-radius: 12px 12px 0 0; }
+.stationRow:last-child { border-bottom: none; border-radius: 0 0 12px 12px; }
+.stationRow:hover { background: var(--bart-card2); }
+.stationRowLeft { display: flex; align-items: center; gap: 10px; }
+.stationLines { display: flex; gap: 3px; flex-shrink: 0; }
+.stationName { font-size: 0.82rem; font-weight: 600; color: var(--bart-text); margin-bottom: 2px; }
+.stationRowRight { display: flex; align-items: center; gap: 6px; }
+.stationDist { font-family: var(--font-mono); font-size: 0.62rem; color: var(--bart-muted); }
+.stationArrow { color: var(--bart-muted); }
+
+/* ── STATION DETAIL ─────────────────────────────────── */
+.detailHero { background: var(--bart-card); padding: 12px 16px 14px; border-bottom: 1px solid var(--bart-border); }
+.detailHeroBody { margin-top: 8px; }
+.detailHeroTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+.detailLines { display: flex; gap: 5px; }
+.detailName { font-family: var(--font-display); font-size: 1.2rem; font-weight: 900; color: var(--bart-text); }
+.detailAddress { font-size: 0.72rem; color: var(--bart-muted); margin-top: 2px; }
+
+.tabBar { display: flex; background: var(--bart-card); border-bottom: 1px solid var(--bart-border); }
+.tabBtn { flex: 1; background: none; border: none; padding: 10px 4px; font-size: 0.72rem; color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.1s; }
+.tabBtnOn { color: var(--bart-yellow); border-bottom-color: var(--bart-yellow); font-weight: 700; }
+
+.tabContent { padding: 14px 16px; }
+.tabSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 8px; display: block; }
+
+.depCard { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; background: var(--bart-card); border-left: 3px solid; border-radius: 0 8px 8px 0; margin-bottom: 5px; }
+.depCardLine { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--bart-text); }
+.depCardPlat { font-size: 0.65rem; color: var(--bart-muted); margin-top: 2px; }
+.depCardTime { font-family: var(--font-mono); font-size: 0.78rem; color: var(--bart-text); font-weight: 700; }
+
+.amenRow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.amenChip { font-size: 0.68rem; background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 8px; padding: 5px 10px; color: var(--bart-muted); }
+
+.schedControls { display: flex; gap: 8px; margin-bottom: 6px; }
+.schedChipOn { background: var(--bart-yellow); color: #000; font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+.schedChip { background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+.schedNote { font-size: 0.65rem; color: var(--bart-muted); font-family: var(--font-mono); margin-bottom: 10px; }
+
+.elevCard { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; margin-bottom: 8px; border: 1px solid; }
+.elevOK { background: rgba(77,184,72,0.08); border-color: rgba(77,184,72,0.3); }
+.elevCardIcon { font-size: 1.2rem; color: #4DB848; }
+.elevCardTitle { font-size: 0.82rem; font-weight: 600; color: var(--bart-text); }
+.elevCardStatus { font-size: 0.68rem; color: #4DB848; margin-top: 2px; }
+.elevOKBadge { margin-left: auto; background: rgba(77,184,72,0.15); color: #4DB848; font-size: 0.65rem; font-weight: 700; padding: 3px 8px; border-radius: 8px; font-family: var(--font-mono); }
+.elevNote { display: flex; gap: 8px; font-size: 0.68rem; color: var(--bart-muted); padding: 10px 12px; background: var(--bart-card); border-radius: 10px; margin-top: 4px; }
+
+.mapPlaceholder { background: var(--bart-card); border-radius: 12px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; margin-bottom: 12px; border: 1px solid var(--bart-border); }
+.mapPlaceholder span { font-size: 2rem; }
+.mapPlaceholder p { font-size: 0.82rem; color: var(--bart-text); font-weight: 600; }
+.mapPlaceholderSub { font-size: 0.68rem; color: var(--bart-muted) !important; font-weight: 400 !important; }
+.directionsBtn { width: 100%; background: var(--bart-blue); color: white; border: none; border-radius: 12px; padding: 12px; font-size: 0.85rem; font-weight: 700; cursor: pointer; font-family: var(--font-body); }
+
+/* ── PLAN A TRIP ─────────────────────────────────────── */
+.planCard { background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 16px; padding: 14px; margin-bottom: 12px; }
+.planField { padding: 6px 0; }
+.planFieldLabel { display: block; font-family: var(--font-mono); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 3px; }
+.planFieldValue { font-size: 0.9rem; font-weight: 600; color: var(--bart-text); font-family: var(--font-display); }
+.planDivider { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+.planLine { flex: 1; height: 1px; background: var(--bart-border); }
+.swapBtn { background: var(--bart-card2); border: 1px solid var(--bart-border); color: var(--bart-blue); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.8rem; }
+
+.planTimeRow { display: flex; gap: 5px; margin-bottom: 14px; }
+.timeChip { flex: 1; padding: 7px 4px; border-radius: 8px; font-size: 0.68rem; background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); text-align: center; }
+.timeChipOn { background: var(--bart-yellow); color: #000; border-color: var(--bart-yellow); font-weight: 700; }
+
+.planSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 7px; display: block; }
+.prefSection { margin-bottom: 14px; }
+.prefGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.prefChip { padding: 8px 10px; border-radius: 10px; font-size: 0.72rem; background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); text-align: center; transition: all 0.1s; }
+.prefChipOn { background: rgba(0,153,205,0.15); border-color: var(--bart-blue); color: var(--bart-blue); font-weight: 600; }
+
+.findTripsBtn { width: 100%; background: var(--bart-blue); color: white; border: none; border-radius: 14px; padding: 14px; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: var(--font-body); margin-bottom: 16px; transition: background 0.15s; }
+.findTripsBtn:hover { background: #007BAA; }
+
+.recentSection { }
+.recentRow { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: var(--bart-card); border-radius: 10px; margin-bottom: 5px; cursor: pointer; }
+.recentIcon { color: var(--bart-muted); font-size: 0.85rem; }
+.recentText { flex: 1; font-size: 0.78rem; color: var(--bart-muted); }
+.recentArrow { color: var(--bart-muted); }
+
+/* ── TRIP RESULTS ────────────────────────────────────── */
+.tripRoute { font-size: 0.75rem; color: var(--bart-muted); margin-bottom: 12px; font-family: var(--font-mono); }
+
+.tripCard { background: var(--bart-card); border: 1.5px solid var(--bart-border); border-radius: 14px; margin-bottom: 8px; overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
+.tripCardOn { border-color: var(--bart-yellow); }
+.tripCardTop { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+.tripCardLeft { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.tripMin { font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: var(--bart-text); line-height: 1; }
+.tripFare { font-family: var(--font-mono); font-size: 0.62rem; color: var(--bart-muted); }
+.tripCardMid { flex: 1; }
+.tripTime { font-size: 0.82rem; font-weight: 600; color: var(--bart-text); margin-bottom: 4px; }
+.tripLines { display: flex; align-items: center; gap: 5px; }
+.tripTransfers { font-size: 0.65rem; color: var(--bart-muted); font-family: var(--font-mono); }
+.tripBadge { font-size: 0.62rem; font-weight: 700; padding: 3px 8px; border-radius: 8px; white-space: nowrap; font-family: var(--font-mono); }
+
+.itinerary { padding: 0 14px 14px; border-top: 1px solid var(--bart-border); padding-top: 12px; }
+.itinRow { display: flex; gap: 0; margin-bottom: 0; position: relative; padding-left: 22px; padding-bottom: 14px; }
+.itinDot { width: 10px; height: 10px; border-radius: 50%; position: absolute; left: 0; top: 4px; flex-shrink: 0; }
+.itinLine { position: absolute; left: 4px; top: 14px; bottom: 0; width: 2px; }
+.itinBody { flex: 1; }
+.itinAction { font-size: 0.78rem; font-weight: 600; color: var(--bart-text); margin-bottom: 2px; }
+.itinDetail { font-size: 0.65rem; color: var(--bart-muted); line-height: 1.4; }
+
+.fareBreakdown { margin-top: 8px; padding: 10px 12px; background: var(--bart-bg); border-radius: 10px; }
+.fareRow { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--bart-muted); padding: 2px 0; }
+.fareTotal { color: var(--bart-text); font-weight: 700; border-top: 1px solid var(--bart-border); padding-top: 6px; margin-top: 4px; }
+
+/* ── ACCESSIBILITY ───────────────────────────────────── */
+.accTabs { display: flex; gap: 0; border-bottom: 1px solid var(--bart-border); margin-bottom: 14px; }
+.accTab { background: none; border: none; padding: 8px 14px; font-size: 0.75rem; color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.accTabOn { color: var(--bart-yellow); border-bottom-color: var(--bart-yellow); font-weight: 700; }
+
+.accSection { margin-bottom: 16px; }
+.accSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 10px; display: block; }
+
+.textSizeRow { display: flex; gap: 6px; margin-bottom: 8px; }
+.textSizeBtn { flex: 1; padding: 7px; border-radius: 9px; font-size: 0.78rem; background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); transition: all 0.1s; }
+.textSizeBtnOn { background: var(--bart-yellow); color: #000; border-color: var(--bart-yellow); font-weight: 700; }
+.textPreview { background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 10px; padding: 10px 14px; color: var(--bart-text); }
+
+.toggleRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bart-card); border-radius: 12px; margin-bottom: 6px; gap: 12px; }
+.toggleLabel { font-size: 0.82rem; font-weight: 600; color: var(--bart-text); margin-bottom: 2px; }
+.toggleSub { font-size: 0.65rem; color: var(--bart-muted); line-height: 1.4; }
+.toggle { width: 44px; height: 26px; border-radius: 13px; background: var(--bart-border); border: none; cursor: pointer; position: relative; flex-shrink: 0; transition: background 0.2s; }
+.toggleOn { background: var(--bart-blue); }
+.toggleThumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: transform 0.2s; }
+.toggleOn .toggleThumb { transform: translateX(18px); }

@@ -1,0 +1,228 @@
+/* ── Hearth product palette ────────────────────────────── */
+.wrapper {
+  --h-bg:      #FEFAF5;
+  --h-sidebar: #F5EFE4;
+  --h-border:  #E8DFD0;
+  --h-text:    #2C2C2C;
+  --h-muted:   #8C7B6B;
+  --h-amber:   #C17F3E;
+  --h-white:   #FFFFFF;
+  --h-hover:   #EFE8DC;
+  display: flex; flex-direction: column; gap: 0; width: 100%;
+}
+
+/* Screen tabs */
+.screenTabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.screenTab {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em;
+  padding: 6px 14px; border: 1.5px solid var(--border); border-radius: 100px;
+  background: none; color: var(--muted); cursor: pointer; transition: all 0.15s;
+}
+.screenTab:hover { background: var(--bg-alt); color: var(--text); }
+.screenTabActive { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+/* Window */
+.window { border-radius: 12px; overflow: hidden; border: 1px solid var(--h-border); box-shadow: 0 20px 60px rgba(0,0,0,0.10); background: var(--h-bg); }
+.windowChrome { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; background: var(--h-sidebar); border-bottom: 1px solid var(--h-border); }
+.trafficLights { display: flex; gap: 6px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.windowTitle { font-family: var(--font-mono); font-size: 0.72rem; color: var(--h-muted); letter-spacing: 0.04em; }
+
+/* App layout */
+.app { display: grid; grid-template-columns: 190px 1fr; height: 540px; overflow: hidden; }
+
+/* Sidebar */
+.sidebar { background: var(--h-sidebar); border-right: 1px solid var(--h-border); display: flex; flex-direction: column; padding: 14px 0; overflow-y: auto; }
+.sidebarLogo { display: flex; align-items: center; gap: 8px; padding: 0 14px 14px; border-bottom: 1px solid var(--h-border); margin-bottom: 8px; }
+.logoFlame { font-size: 1rem; }
+.logoName { font-family: var(--font-display); font-size: 1rem; font-weight: 700; font-style: italic; color: var(--h-amber); }
+
+.sidebarNav { display: flex; flex-direction: column; gap: 2px; padding: 0 8px; }
+.navItem { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 8px; border: none; background: none; color: var(--h-muted); cursor: pointer; transition: background 0.12s, color 0.12s; width: 100%; text-align: left; font-family: var(--font-body); }
+.navItem:hover { background: var(--h-hover); color: var(--h-text); }
+.navActive { background: var(--h-white) !important; color: var(--h-amber) !important; font-weight: 600; }
+.navIcon { font-size: 0.9rem; width: 18px; text-align: center; }
+.navLabel { font-size: 0.82rem; }
+
+.sidebarAreas { padding: 12px 8px 0; border-top: 1px solid var(--h-border); margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
+.sidebarSectionLabel { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--h-muted); padding: 0 8px 6px; display: block; }
+.areaItem { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 7px; border: none; background: none; cursor: pointer; width: 100%; font-family: var(--font-body); transition: background 0.1s; }
+.areaItem:hover { background: var(--h-hover); }
+.areaIcon { font-size: 0.75rem; }
+.areaLabel { font-size: 0.78rem; color: var(--h-text); flex: 1; text-align: left; }
+.areaBadge { font-size: 0.62rem; padding: 1px 6px; border-radius: 10px; font-weight: 600; font-family: var(--font-mono); }
+
+.sidebarBottom { padding: 10px 8px 0; border-top: 1px solid var(--h-border); margin-top: auto; }
+.userRow { display: flex; align-items: center; gap: 8px; padding: 6px 6px; }
+.userAvatar { width: 26px; height: 26px; border-radius: 50%; background: var(--h-amber); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+.userInfo { display: flex; flex-direction: column; }
+.userName { font-size: 0.78rem; font-weight: 600; color: var(--h-text); }
+.userPlan { font-size: 0.62rem; color: var(--h-amber); font-family: var(--font-mono); }
+
+/* Main area */
+.mainArea { overflow-y: auto; background: var(--h-bg); }
+.screen { padding: 18px 20px; height: 100%; box-sizing: border-box; }
+.screenHeader { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; gap: 12px; }
+.screenTitle { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--h-text); }
+.screenSub { font-size: 0.75rem; color: var(--h-muted); margin-top: 2px; }
+.addBtn { background: var(--h-amber); color: white; border: none; padding: 6px 12px; border-radius: 7px; font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap; font-family: var(--font-body); flex-shrink: 0; }
+
+/* ── Life View ─────────────────────────────────────────── */
+.lifeGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+.areaCard { background: var(--h-white); border: 1px solid var(--h-border); border-radius: 12px; padding: 12px 14px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border-top: 3px solid var(--area-color, var(--h-amber)); }
+.areaCard:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+.areaCardHeader { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; }
+.areaCardIcon { font-size: 0.85rem; }
+.areaCardLabel { font-size: 0.82rem; font-weight: 600; color: var(--h-text); flex: 1; }
+.areaCardCount { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600; }
+
+.areaProgress { margin-bottom: 10px; }
+.areaProgressBar { height: 4px; background: var(--h-border); border-radius: 2px; margin-bottom: 4px; overflow: hidden; }
+.areaProgressFill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+.areaProgressLabel { font-family: var(--font-mono); font-size: 0.62rem; color: var(--h-muted); }
+
+.areaCardTasks { display: flex; flex-direction: column; gap: 4px; }
+.areaTaskRow { display: flex; align-items: center; gap: 6px; }
+.areaTaskDot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.areaTaskTitle { font-size: 0.72rem; color: var(--h-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.aiNudgeCard { background: #F6FAF6; border: 1px solid #B8D4BB; border-radius: 12px; padding: 14px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: background 0.1s; }
+.aiNudgeCard:hover { background: #EEF7EF; }
+.aiNudgeIcon { font-size: 0.9rem; color: #6B8F6E; }
+.aiNudgeText { font-size: 0.78rem; line-height: 1.5; color: var(--h-text); }
+.aiNudgeLink { font-size: 0.72rem; color: #6B8F6E; font-weight: 600; }
+
+/* ── Kanban ────────────────────────────────────────────── */
+.boardFilters { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
+.filterChip { font-size: 0.65rem; padding: 3px 8px; border-radius: 6px; font-family: var(--font-mono); white-space: nowrap; }
+
+.kanbanBoard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; height: calc(100% - 70px); }
+.kanbanCol { display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+.colHeader { display: flex; align-items: center; justify-content: space-between; padding: 0 4px; }
+.colTitle { font-size: 0.78rem; font-weight: 600; color: var(--h-text); }
+.colCount { font-family: var(--font-mono); font-size: 0.65rem; background: var(--h-hover); color: var(--h-muted); padding: 1px 6px; border-radius: 10px; }
+
+.cardStack { display: flex; flex-direction: column; gap: 7px; overflow-y: auto; flex: 1; padding-right: 2px; }
+
+.kanbanCard { background: var(--h-white); border: 1px solid var(--h-border); border-radius: 10px; padding: 10px 12px; cursor: pointer; transition: transform 0.12s, box-shadow 0.12s; }
+.kanbanCard:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.kanbanCardTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px; gap: 6px; }
+.kanbanCardArea { font-size: 0.62rem; padding: 2px 7px; border-radius: 5px; font-weight: 500; font-family: var(--font-mono); }
+.kanbanCardPriority { font-size: 0.62rem; font-weight: 600; font-family: var(--font-mono); }
+.kanbanCardTitle { font-size: 0.78rem; font-weight: 500; color: var(--h-text); line-height: 1.4; margin-bottom: 8px; }
+.kanbanCardGoal { display: flex; align-items: center; gap: 5px; }
+.goalIcon { font-size: 0.7rem; color: var(--h-muted); }
+.goalText { font-size: 0.65rem; color: var(--h-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.addCardBtn { background: none; border: 1.5px dashed var(--h-border); border-radius: 8px; padding: 7px; font-size: 0.72rem; color: var(--h-muted); cursor: pointer; width: 100%; font-family: var(--font-body); transition: background 0.1s, border-color 0.1s; }
+.addCardBtn:hover { background: var(--h-hover); border-color: var(--h-amber); color: var(--h-amber); }
+
+/* ── Card Detail ───────────────────────────────────────── */
+.cardDetailLayout { display: grid; grid-template-columns: 1fr 180px; gap: 16px; height: 100%; }
+.cardDetailMain { overflow-y: auto; }
+.cardDetailHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.backBtn { font-size: 0.75rem; color: var(--h-muted); background: none; border: none; cursor: pointer; font-family: var(--font-body); }
+.cardDetailStatus { display: flex; gap: 6px; }
+.statusPill { font-size: 0.65rem; padding: 3px 8px; border-radius: 5px; font-weight: 500; font-family: var(--font-mono); }
+.cardDetailTitle { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--h-text); margin-bottom: 10px; }
+.cardDetailMeta { display: flex; gap: 7px; margin-bottom: 16px; flex-wrap: wrap; }
+.metaChip { font-size: 0.68rem; padding: 3px 10px; border-radius: 6px; font-family: var(--font-mono); }
+
+.cardTabs { display: flex; gap: 0; border-bottom: 1px solid var(--h-border); margin-bottom: 14px; }
+.cardTab { background: none; border: none; padding: 7px 14px; font-size: 0.78rem; color: var(--h-muted); cursor: pointer; font-family: var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.1s; }
+.cardTabActive { color: var(--h-amber); border-bottom-color: var(--h-amber); font-weight: 600; }
+
+.cardNotes { display: flex; flex-direction: column; gap: 8px; }
+.noteText { font-size: 0.82rem; line-height: 1.65; color: var(--h-text); }
+.noteTag { font-family: var(--font-mono); font-size: 0.62rem; color: var(--h-muted); }
+
+.subtasks { display: flex; flex-direction: column; gap: 6px; }
+.subtaskRow { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
+.subtaskCheck { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--h-border); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--h-sage, #6B8F6E); flex-shrink: 0; }
+.subtaskDone { background: #6B8F6E; border-color: #6B8F6E; color: white; }
+.subtaskText { font-size: 0.8rem; color: var(--h-text); }
+
+.aiPlanTab { display: flex; flex-direction: column; gap: 10px; }
+.aiPlanHeader { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+.aiPlanIcon { color: #6B8F6E; font-size: 0.9rem; }
+.aiPlanLabel { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: #6B8F6E; }
+.aiPlanIntro { font-size: 0.78rem; color: var(--h-muted); }
+
+.aiSuggestion { display: flex; gap: 10px; padding: 10px 12px; background: var(--h-white); border: 1px solid var(--h-border); border-radius: 10px; }
+.aiStepNum { font-family: var(--font-mono); font-size: 0.65rem; color: var(--h-amber); font-weight: 700; padding-top: 2px; flex-shrink: 0; }
+.aiSuggestionBody { display: flex; flex-direction: column; gap: 4px; }
+.aiSuggestionText { font-size: 0.78rem; color: var(--h-text); line-height: 1.5; }
+.aiSuggestionTag { font-family: var(--font-mono); font-size: 0.6rem; color: var(--h-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+.cardDetailSidebar { border-left: 1px solid var(--h-border); padding-left: 14px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
+.sidebarSection { display: flex; flex-direction: column; gap: 5px; }
+.sidebarValue { font-size: 0.78rem; color: var(--h-text); font-weight: 500; }
+.linkedGoal { display: flex; align-items: center; gap: 6px; }
+.linkedGoalIcon { font-size: 0.8rem; }
+.linkedGoalText { font-size: 0.75rem; color: var(--h-text); }
+.relatedCards { display: flex; flex-direction: column; gap: 5px; }
+.relatedCard { font-size: 0.72rem; background: var(--h-hover); border-radius: 6px; padding: 5px 8px; color: var(--h-text); cursor: pointer; }
+
+/* ── Life Planning ─────────────────────────────────────── */
+.goalsList { display: flex; flex-direction: column; gap: 8px; }
+.goalRow { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--h-white); border: 1px solid var(--h-border); border-radius: 12px; cursor: pointer; gap: 12px; transition: background 0.1s; }
+.goalRow:hover { background: var(--h-hover); }
+.goalRowLeft { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.goalAreaIcon { font-size: 1rem; flex-shrink: 0; }
+.goalRowInfo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.goalRowTitle { font-size: 0.82rem; font-weight: 600; color: var(--h-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.goalRowArea { font-size: 0.68rem; font-weight: 500; }
+.goalRowRight { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.goalCardCount { font-family: var(--font-mono); font-size: 0.65rem; color: var(--h-muted); }
+.goalBarWrap { display: flex; align-items: center; gap: 8px; }
+.goalBar { width: 80px; height: 6px; background: var(--h-border); border-radius: 3px; overflow: hidden; }
+.goalBarFill { height: 100%; border-radius: 3px; }
+.goalPercent { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; width: 32px; }
+
+.planningFooter { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 12px 14px; background: #F6FAF6; border: 1px solid #B8D4BB; border-radius: 12px; cursor: pointer; }
+.planningFooterIcon { color: #6B8F6E; font-size: 0.9rem; flex-shrink: 0; }
+.planningFooterText { font-size: 0.78rem; color: var(--h-text); line-height: 1.4; }
+
+/* ── AI Assist ─────────────────────────────────────────── */
+.aiAssistList { display: flex; flex-direction: column; gap: 10px; }
+.aiAssistCard { background: var(--h-white); border: 1px solid var(--h-border); border-radius: 12px; overflow: hidden; }
+.aiAssistCardTop { padding: 14px 16px; cursor: pointer; transition: background 0.1s; }
+.aiAssistCardTop:hover { background: var(--h-hover); }
+.aiAssistType { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 5px; }
+.aiAssistTitle { font-size: 0.85rem; font-weight: 600; color: var(--h-text); display: block; margin-bottom: 4px; }
+.aiAssistPreview { font-size: 0.75rem; color: var(--h-muted); display: block; margin-bottom: 6px; }
+.aiAssistToggle { font-size: 0.72rem; color: var(--h-amber); font-weight: 600; }
+.aiAssistDetail { padding: 12px 16px; background: #FDFAF5; border-top: 1px solid var(--h-border); display: flex; flex-direction: column; gap: 8px; }
+.aiDetailRow { display: flex; align-items: flex-start; gap: 8px; }
+.aiDetailBullet { color: var(--h-amber); font-size: 0.78rem; flex-shrink: 0; padding-top: 1px; }
+.aiDetailText { font-size: 0.78rem; color: var(--h-text); line-height: 1.5; }
+.aiAcceptBtn { align-self: flex-start; background: var(--h-amber); color: white; border: none; padding: 6px 14px; border-radius: 7px; font-size: 0.75rem; font-weight: 600; cursor: pointer; margin-top: 4px; font-family: var(--font-body); }
+
+/* ── Quick Add ─────────────────────────────────────────── */
+.quickAddOverlay { display: flex; align-items: center; justify-content: center; height: 100%; }
+.quickAddModal { width: 100%; max-width: 440px; background: white; border: 1.5px solid var(--h-border); border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.10); overflow: hidden; }
+.quickAddTop { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--h-border); }
+.quickAddLabel { font-family: var(--font-mono); font-size: 0.7rem; color: var(--h-amber); letter-spacing: 0.06em; text-transform: uppercase; }
+.quickAddClose { cursor: pointer; color: var(--h-muted); font-size: 0.85rem; }
+.quickAddInput { width: 100%; border: none; background: none; font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--h-text); padding: 14px 16px; outline: none; border-bottom: 1px solid var(--h-border); }
+.quickAddRow { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--h-border); }
+.quickAddField { padding: 10px 16px; display: flex; flex-direction: column; gap: 3px; }
+.quickAddField:first-child { border-right: 1px solid var(--h-border); }
+.quickAddFieldLabel { font-family: var(--font-mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--h-muted); }
+.quickAddFieldValue { font-size: 0.78rem; font-weight: 500; color: var(--h-text); }
+.aiAutoSuggest { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: #F6FAF6; border-bottom: 1px solid #C8DFC9; }
+.aiAutoIcon { color: #6B8F6E; font-size: 0.85rem; flex-shrink: 0; }
+.aiAutoText { font-size: 0.75rem; color: var(--h-text); flex: 1; }
+.aiAutoLink { font-size: 0.72rem; color: #6B8F6E; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.quickAddFooter { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 16px; }
+.quickAddCancel { background: none; border: 1px solid var(--h-border); padding: 7px 14px; border-radius: 7px; font-size: 0.78rem; color: var(--h-muted); cursor: pointer; font-family: var(--font-body); }
+.quickAddSave { background: var(--h-amber); color: white; border: none; padding: 7px 16px; border-radius: 7px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: var(--font-body); }
+
+@media (max-width: 768px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .lifeGrid { grid-template-columns: 1fr 1fr; }
+  .kanbanBoard { grid-template-columns: 1fr; }
+  .cardDetailLayout { grid-template-columns: 1fr; }
+  .cardDetailSidebar { display: none; }
+}
