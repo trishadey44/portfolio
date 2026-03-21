@@ -1,7 +1,14 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
+import { HearthSplash, BARTSplash, SimmerSplash } from './CardSplash'
 import styles from './Projects.module.css'
+
+const SPLASH_MAP = {
+  'hearth':        HearthSplash,
+  'bart-redesign': BARTSplash,
+  'simmer':        SimmerSplash,
+}
 
 export default function Projects() {
   const useSlider = projects.length > 3
@@ -79,12 +86,19 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, i }) {
+  const Splash = SPLASH_MAP[project.slug]
   return (
     <Link to={`/case-study/${project.slug}`} data-hover>
       <div className={styles.cardThumb} style={{ '--card-color': project.color }}>
-        <div className={styles.cardPlaceholder}>
-          <span className={styles.cardIndex}>0{i + 1}</span>
-        </div>
+        {Splash ? (
+          <div className={styles.cardSplash}>
+            <Splash />
+          </div>
+        ) : (
+          <div className={styles.cardPlaceholder}>
+            <span className={styles.cardIndex}>0{i + 1}</span>
+          </div>
+        )}
         <div className={styles.cardOverlay}>
           <span className={styles.viewLabel}>View Case Study →</span>
         </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 import styles from './Resume.module.css'
 
 const data = {
@@ -12,7 +13,7 @@ const data = {
       role: 'Climbing Programs Manager',
       org: 'UC Berkeley',
       location: 'Berkeley',
-      period: 'Feb 2023 — Present',
+      period: 'Feb 2024 — Present',
       bullets: [
         'Led and trained student staff at the UC Berkeley climbing wall, emphasizing safety, inclusivity, and reducing barriers for new climbers.',
         'Developed accessibility programs with user-centered design to provide students and underrepresented communities opportunities to engage with climbing, fostering an inclusive environment through partnerships.',
@@ -118,24 +119,15 @@ export default function Resume() {
 
   return (
     <main className={styles.page}>
-      {/* ── Top bar ── */}
-      <div className={styles.topBar}>
-        <Link to="/" className={styles.backLink}>← Back</Link>
-        <a href="/resume.pdf" download className={styles.downloadBtn} data-hover>
-          Download PDF ↓
-        </a>
-      </div>
-
       <div className={styles.inner}>
         {/* ── Header ── */}
         <header className={`${styles.header} ${mounted ? styles.headerVisible : ''}`}>
           <div className={styles.headerLeft}>
             <h1 className={styles.name}>{data.name}</h1>
             <p className={styles.titleLine}>{data.title}</p>
+            <a href="mailto:tdey13@gmail.com" className={styles.contactLink}>tdey13@gmail.com</a>
           </div>
           <div className={styles.headerRight}>
-            <a href="mailto:tdey13@gmail.com" className={styles.contactLink}>tdey13@gmail.com</a>
-            <a href="https://www.linkedin.com/in/trishadey/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>linkedin.com/in/trishadey</a>
             <span className={styles.availBadge}>● {data.availability}</span>
           </div>
         </header>
@@ -181,6 +173,7 @@ export default function Resume() {
           <p className={styles.references}>References available upon request</p>
         </Section>
       </div>
+      <Footer />
     </main>
   )
 }

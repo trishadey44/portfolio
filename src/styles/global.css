@@ -131,3 +131,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   .container { padding: 0 20px; }
   .section { padding: 80px 0; }
 }
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+}

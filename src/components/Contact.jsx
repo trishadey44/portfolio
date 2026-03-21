@@ -2,13 +2,14 @@ import { useState } from 'react'
 import styles from './Contact.module.css'
 
 // ─────────────────────────────────────────────────────────────────
-//  TO ENABLE REAL EMAIL SENDING:
+//  HOW TO GET MESSAGES SENT TO tdey13@gmail.com:
 //  1. Go to https://web3forms.com
-//  2. Enter tdey13@gmail.com and click "Create Access Key"
-//  3. Check your Gmail inbox for the key
-//  4. Paste it below replacing YOUR_ACCESS_KEY_HERE
+//  2. Type tdey13@gmail.com and click "Create Access Key"
+//  3. Check Gmail and click the confirmation link
+//  4. Copy the access key and paste it below
 // ─────────────────────────────────────────────────────────────────
 const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE'
+const CONFIGURED = WEB3FORMS_KEY !== 'YOUR_ACCESS_KEY_HERE'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -19,6 +20,12 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
+
+    if (!CONFIGURED) {
+      // Key not yet set — show setup instructions instead of silently failing
+      setStatus('setup')
+      return
+    }
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -73,6 +80,12 @@ export default function Contact() {
                 <h3>Oops, something went wrong.</h3>
                 <p>Please email me directly at <a href="mailto:tdey13@gmail.com">tdey13@gmail.com</a></p>
                 <button className={styles.submit} onClick={() => setStatus(null)}>Try again</button>
+              </div>
+            ) : status === 'setup' ? (
+              <div className={styles.error}>
+                <h3>One quick setup step needed!</h3>
+                <p>To receive messages in your Gmail, open <code>src/components/Contact.jsx</code>, go to <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">web3forms.com</a>, enter <strong>tdey13@gmail.com</strong>, and paste your free access key where it says <code>YOUR_ACCESS_KEY_HERE</code>. Takes 2 minutes!</p>
+                <button className={styles.submit} onClick={() => setStatus(null)}>Got it</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className={styles.form}>

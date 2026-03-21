@@ -7,6 +7,13 @@ export const projects = [
     year: '2025',
     color: '#C17F3E',
     tags: ['UX Research', 'AI/ML UX', 'Product Design', 'Prototyping', 'Figma'],
+    cardVisual: {
+      emoji: '🔥',
+      label: 'Life OS',
+      chips: ['Work', 'Health', 'Home', 'Creative'],
+      accent: '#C17F3E',
+      bg: '#F9EFE3',
+    },
     richCaseStudy: true,
     theme: {
       accent: '#C17F3E', accentLight: '#F9EFE3', accentMuted: '#E8C49A',
@@ -80,6 +87,13 @@ export const projects = [
     year: '2025',
     color: '#0099CD',
     tags: ['UX Research', 'Information Architecture', 'Accessibility', 'Prototyping', 'Figma'],
+    cardVisual: {
+      emoji: '🚇',
+      label: 'Transit Redesign',
+      chips: ['Red line', 'Blue line', 'Yellow line'],
+      accent: '#0099CD',
+      bg: '#E6F6FC',
+    },
     richCaseStudy: true,
     theme: {
       accent: '#0099CD', accentLight: '#E6F6FC', accentMuted: '#7FCCE6',
@@ -194,6 +208,13 @@ export const projects = [
     year: '2025',
     color: '#E8834A',
     tags: ['UX Research', 'Interaction Design', 'Visual Design', 'Prototyping', 'Figma'],
+    cardVisual: {
+      emoji: '🍜',
+      label: 'Recipe Discovery',
+      chips: ['Under 30 min', 'Vegan', 'Use pantry'],
+      accent: '#FF6B35',
+      bg: '#FFF0E8',
+    },
     richCaseStudy: true,
     theme: {
       accent: '#FF6B35', accentLight: '#FFF0E8', accentMuted: '#FFB08A',
