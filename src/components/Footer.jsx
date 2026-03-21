@@ -13,9 +13,9 @@ export default function Footer() {
         <div className={styles.right}>
           {[
             { label: 'GitHub', href: 'https://github.com/yourname' },
-            { label: 'LinkedIn', href: 'https://linkedin.com/in/yourname' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/trishadey/' },
             { label: 'Dribbble', href: 'https://dribbble.com/yourname' },
-            { label: 'Email', href: 'mailto:hello@yoursite.com' },
+            { label: 'Email', href: 'mailto:tdey13@gmail.com' },
           ].map(l => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" className={styles.link} data-hover>
               {l.label}

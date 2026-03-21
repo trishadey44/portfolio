@@ -39,7 +39,7 @@ export default function Hero() {
     setMounted(true)
     const id = setInterval(() => {
       setRoleIndex(i => (i + 1) % ROLES.length)
-    }, 3000)
+    }, 2000)
     return () => clearInterval(id)
   }, [])
 

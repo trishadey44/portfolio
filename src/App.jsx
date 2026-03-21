@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CaseStudy from './pages/CaseStudy'
+import Resume from './pages/Resume'
 
 // ─── Cursor ──────────────────────────────────────────────
 function Cursor() {
@@ -111,6 +112,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/case-study/:slug" element={<CaseStudy />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </>
   )

@@ -36,14 +36,12 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/resume"
               className={styles.resumeBtn}
             >
               Resume ↗
-            </a>
+            </Link>
           </li>
         </ul>
 
