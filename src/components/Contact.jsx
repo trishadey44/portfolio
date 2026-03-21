@@ -8,7 +8,7 @@ import styles from './Contact.module.css'
 //  3. Check Gmail and click the confirmation link
 //  4. Copy the access key and paste it below
 // ─────────────────────────────────────────────────────────────────
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE'
+const WEB3FORMS_KEY = '9937d750-2350-40df-8c88-fdd8fa775acb'
 const CONFIGURED = WEB3FORMS_KEY !== 'YOUR_ACCESS_KEY_HERE'
 
 export default function Contact() {
