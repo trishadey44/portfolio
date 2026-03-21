@@ -1,14 +1,14 @@
-/* ── BART palette: dark navy + BART brand colors ─── */
+/* ── BART palette: light with BART brand colors ─── */
 .wrapper {
-  --bart-bg:     #0D1B2A;
-  --bart-card:   #152032;
-  --bart-card2:  #1C2D42;
-  --bart-border: rgba(255,255,255,0.08);
+  --bart-bg:     #F5F7FA;
+  --bart-card:   #FFFFFF;
+  --bart-card2:  #EEF2F7;
+  --bart-border: #DDE3ED;
   --bart-blue:   #0099CD;
   --bart-yellow: #FFD520;
-  --bart-text:   #FFFFFF;
-  --bart-muted:  rgba(255,255,255,0.5);
-  --bart-muted2: rgba(255,255,255,0.25);
+  --bart-text:   #111827;
+  --bart-muted:  #6B7280;
+  --bart-muted2: #9CA3AF;
   display: flex; flex-direction: column; align-items: center; width: 100%;
 }
 
@@ -20,21 +20,21 @@
 
 /* Phone */
 .phoneWrap { display: flex; justify-content: center; }
-.phone { width: 320px; background: var(--bart-bg); border-radius: 44px; border: 8px solid #0A1520; box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,153,205,0.2); display: flex; flex-direction: column; overflow: hidden; }
-.notch { width: 90px; height: 24px; background: #0A1520; border-radius: 0 0 14px 14px; margin: 0 auto; }
+.phone { width: 320px; background: var(--bart-bg); border-radius: 44px; border: 8px solid #2C3E50; box-shadow: 0 32px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,153,205,0.1); display: flex; flex-direction: column; overflow: hidden; }
+.notch { width: 90px; height: 24px; background: #2C3E50; border-radius: 0 0 14px 14px; margin: 0 auto; }
 .phoneInner { flex: 1; display: flex; flex-direction: column; min-height: 580px; overflow: hidden; }
 .content { flex: 1; overflow-y: auto; background: var(--bart-bg); scrollbar-width: none; }
 .content::-webkit-scrollbar { display: none; }
 .homeBar { height: 18px; display: flex; align-items: center; justify-content: center; background: var(--bart-bg); }
-.homeBar::after { content: ''; width: 90px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; }
+.homeBar::after { content: ''; width: 90px; height: 4px; background: #2C3E50; border-radius: 2px; opacity: 0.2; }
 
 /* Bottom nav */
-.bottomNav { display: flex; background: #0A1520; border-top: 1px solid var(--bart-border); padding: 6px 0 2px; }
+.bottomNav { display: flex; background: white; border-top: 1px solid var(--bart-border); padding: 6px 0 2px; }
 .bnItem { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; background: none; border: none; cursor: pointer; padding: 4px 0; font-family: var(--font-body); }
 .bnIcon { font-size: 1.1rem; color: var(--bart-muted); }
 .bnLabel { font-size: 0.6rem; color: var(--bart-muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
-.bnActive .bnIcon { color: var(--bart-yellow); }
-.bnActive .bnLabel { color: var(--bart-yellow); font-weight: 700; }
+.bnActive .bnIcon { color: var(--bart-blue); }
+.bnActive .bnLabel { color: var(--bart-blue); font-weight: 700; }
 
 /* Shared */
 .screen { padding: 14px 16px 16px; }
@@ -117,7 +117,7 @@
 
 .tabBar { display: flex; background: var(--bart-card); border-bottom: 1px solid var(--bart-border); }
 .tabBtn { flex: 1; background: none; border: none; padding: 10px 4px; font-size: 0.72rem; color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.1s; }
-.tabBtnOn { color: var(--bart-yellow); border-bottom-color: var(--bart-yellow); font-weight: 700; }
+.tabBtnOn { color: var(--bart-blue); border-bottom-color: var(--bart-blue); font-weight: 700; }
 
 .tabContent { padding: 14px 16px; }
 .tabSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 8px; display: block; }
@@ -131,7 +131,7 @@
 .amenChip { font-size: 0.68rem; background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 8px; padding: 5px 10px; color: var(--bart-muted); }
 
 .schedControls { display: flex; gap: 8px; margin-bottom: 6px; }
-.schedChipOn { background: var(--bart-yellow); color: #000; font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+.schedChipOn { background: var(--bart-blue); color: white; border-radius: 20px; padding: 5px 12px; cursor: pointer; }
 .schedChip { background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
 .schedNote { font-size: 0.65rem; color: var(--bart-muted); font-family: var(--font-mono); margin-bottom: 10px; }
 
@@ -160,7 +160,7 @@
 
 .planTimeRow { display: flex; gap: 5px; margin-bottom: 14px; }
 .timeChip { flex: 1; padding: 7px 4px; border-radius: 8px; font-size: 0.68rem; background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); text-align: center; }
-.timeChipOn { background: var(--bart-yellow); color: #000; border-color: var(--bart-yellow); font-weight: 700; }
+.timeChipOn { background: var(--bart-blue); color: white; border-color: var(--bart-blue); font-weight: 700; }
 
 .planSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 7px; display: block; }
 .prefSection { margin-bottom: 14px; }
@@ -181,7 +181,7 @@
 .tripRoute { font-size: 0.75rem; color: var(--bart-muted); margin-bottom: 12px; font-family: var(--font-mono); }
 
 .tripCard { background: var(--bart-card); border: 1.5px solid var(--bart-border); border-radius: 14px; margin-bottom: 8px; overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
-.tripCardOn { border-color: var(--bart-yellow); }
+.tripCardOn { border-color: var(--bart-blue); }
 .tripCardTop { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
 .tripCardLeft { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
 .tripMin { font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: var(--bart-text); line-height: 1; }
@@ -200,21 +200,21 @@
 .itinAction { font-size: 0.78rem; font-weight: 600; color: var(--bart-text); margin-bottom: 2px; }
 .itinDetail { font-size: 0.65rem; color: var(--bart-muted); line-height: 1.4; }
 
-.fareBreakdown { margin-top: 8px; padding: 10px 12px; background: var(--bart-bg); border-radius: 10px; }
+.fareBreakdown { margin-top: 8px; padding: 10px 12px; background: var(--bart-card2); border-radius: 10px; }
 .fareRow { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--bart-muted); padding: 2px 0; }
 .fareTotal { color: var(--bart-text); font-weight: 700; border-top: 1px solid var(--bart-border); padding-top: 6px; margin-top: 4px; }
 
 /* ── ACCESSIBILITY ───────────────────────────────────── */
 .accTabs { display: flex; gap: 0; border-bottom: 1px solid var(--bart-border); margin-bottom: 14px; }
 .accTab { background: none; border: none; padding: 8px 14px; font-size: 0.75rem; color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.accTabOn { color: var(--bart-yellow); border-bottom-color: var(--bart-yellow); font-weight: 700; }
+.accTabOn { color: var(--bart-blue); border-bottom-color: var(--bart-blue); font-weight: 700; }
 
 .accSection { margin-bottom: 16px; }
 .accSectionLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bart-muted); margin-bottom: 10px; display: block; }
 
 .textSizeRow { display: flex; gap: 6px; margin-bottom: 8px; }
 .textSizeBtn { flex: 1; padding: 7px; border-radius: 9px; font-size: 0.78rem; background: var(--bart-card); border: 1px solid var(--bart-border); color: var(--bart-muted); cursor: pointer; font-family: var(--font-body); transition: all 0.1s; }
-.textSizeBtnOn { background: var(--bart-yellow); color: #000; border-color: var(--bart-yellow); font-weight: 700; }
+.textSizeBtnOn { background: var(--bart-blue); color: white; border-color: var(--bart-blue); font-weight: 700; }
 .textPreview { background: var(--bart-card); border: 1px solid var(--bart-border); border-radius: 10px; padding: 10px 14px; color: var(--bart-text); }
 
 .toggleRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bart-card); border-radius: 12px; margin-bottom: 6px; gap: 12px; }

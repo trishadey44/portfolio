@@ -226,10 +226,10 @@
 
 /* ── Next project ─────────────────────────────────────── */
 .nextSection {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--cs-border, var(--border));
   padding: 80px 0;
   margin-top: 40px;
-  background: var(--bg-alt);
+  background: var(--cs-bg-alt, var(--bg-alt));
 }
 
 .nextInner {
@@ -374,9 +374,48 @@
 }
 
 /* ── Rich Case Study Sections ─────────────────────────── */
+
+/* Dark page variant (BART) */
+.pageDark {
+  background: var(--cs-bg);
+  color: var(--cs-text);
+}
+
+.pageDark .back { color: var(--cs-muted); }
+.pageDark .back:hover { color: var(--cs-text); }
+.pageDark .heroTitle,
+.pageDark .heroTagline,
+.pageDark .richHeadline,
+.pageDark .bodyText,
+.pageDark .findingQuote,
+.pageDark .decisionTitle,
+.pageDark .decisionBody,
+.pageDark .compCell { color: var(--cs-text); }
+.pageDark .heroTagline,
+.pageDark .findingTheme,
+.pageDark .statLabel,
+.pageDark .decisionBody,
+.pageDark .compCell { color: var(--cs-muted); }
+.pageDark .tag { background: var(--cs-bg-alt); color: var(--cs-muted); border: 1px solid var(--cs-border); }
+.pageDark .richBlock { border-color: var(--cs-border); }
+.pageDark .statBox { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .findingCard { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .compTable { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .compHeader { background: var(--cs-bg); color: var(--cs-muted); border-color: var(--cs-border); }
+.pageDark .compRow { border-color: var(--cs-border); }
+.pageDark .compRow:hover { background: var(--cs-bg); }
+.pageDark .compName { color: var(--cs-text); }
+.pageDark .decisionCard { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .outcomeRich { background: var(--cs-bg-alt); }
+.pageDark .insightQuote { color: var(--cs-text); }
+.pageDark .nextSection { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .nextTitle { color: var(--cs-text); }
+.pageDark .contentArea { background: var(--cs-bg); }
+
+/* Themed accents (apply to all themes via CSS vars) */
 .richBlock {
   padding: 72px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--cs-border, var(--border));
   max-width: 860px;
   margin: 0 auto;
 }
@@ -403,9 +442,9 @@
 
 .statBox {
   padding: 24px 20px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--cs-border, var(--border));
   border-radius: 16px;
-  background: var(--white);
+  background: var(--cs-card, var(--white));
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -415,14 +454,14 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--blue);
+  color: var(--cs-accent, var(--blue));
   line-height: 1;
 }
 
 .statLabel {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--cs-muted, var(--muted));
   letter-spacing: 0.04em;
   line-height: 1.4;
 }
@@ -437,10 +476,10 @@
 
 .findingCard {
   padding: 20px 22px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--cs-card, var(--white));
+  border: 1px solid var(--cs-border, var(--border));
   border-radius: 14px;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--cs-accent, var(--accent));
 }
 
 .findingQuote {
@@ -448,14 +487,14 @@
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--text);
+  color: var(--cs-text, var(--text));
   margin-bottom: 10px;
 }
 
 .findingTheme {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: var(--muted);
+  color: var(--cs-muted, var(--muted));
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -463,10 +502,10 @@
 /* Competitive table */
 .compTable {
   margin: 32px 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--cs-border, var(--border));
   border-radius: 16px;
   overflow: hidden;
-  background: var(--white);
+  background: var(--cs-card, var(--white));
 }
 
 .compGrid { display: flex; flex-direction: column; }
@@ -476,47 +515,47 @@
   grid-template-columns: 140px 1fr 1fr 1fr;
   gap: 0;
   padding: 12px 20px;
-  background: var(--bg-alt);
-  border-bottom: 1px solid var(--border);
+  background: var(--cs-accent-light, var(--bg-alt));
+  border-bottom: 1px solid var(--cs-border, var(--border));
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--cs-muted, var(--muted));
 }
 
 .compRow {
   display: grid;
   grid-template-columns: 140px 1fr 1fr 1fr;
   padding: 12px 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--cs-border, var(--border));
   align-items: center;
   transition: background 0.1s;
 }
 
 .compRow:last-child { border-bottom: none; }
-.compRow:hover { background: var(--bg-alt); }
+.compRow:hover { background: var(--cs-accent-light, var(--bg-alt)); }
 
 .hearthRow {
-  background: rgba(249,196,20,0.06);
+  background: color-mix(in srgb, var(--cs-accent, var(--accent)) 8%, transparent);
   font-weight: 600;
 }
 
-.hearthRow:hover { background: rgba(249,196,20,0.1); }
+.hearthRow:hover { background: color-mix(in srgb, var(--cs-accent, var(--accent)) 14%, transparent); }
 
-.compName { font-weight: 600; font-size: 0.88rem; }
-.compCell { font-size: 0.82rem; color: #555; line-height: 1.4; }
+.compName { font-weight: 600; font-size: 0.88rem; color: var(--cs-text, var(--text)); }
+.compCell { font-size: 0.82rem; color: var(--cs-muted, #555); line-height: 1.4; }
 
 /* Insight quote */
 .insightQuote {
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--cs-accent, var(--red));
   padding-left: 24px;
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 600;
   line-height: 1.5;
-  color: var(--text);
+  color: var(--cs-text, var(--text));
   margin-top: 32px;
 }
 
@@ -530,21 +569,22 @@
 
 .decisionCard {
   padding: 28px 24px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--cs-card, var(--white));
+  border: 1px solid var(--cs-border, var(--border));
   border-radius: 16px;
   transition: box-shadow 0.2s, transform 0.2s;
+  border-top: 3px solid var(--cs-accent, var(--accent));
 }
 
 .decisionCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
 .decisionNumber {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--accent-dark);
+  color: var(--cs-accent, var(--accent-dark));
   letter-spacing: 0.1em;
   display: block;
   margin-bottom: 10px;
@@ -555,13 +595,13 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: var(--text);
+  color: var(--cs-text, var(--text));
 }
 
 .decisionBody {
   font-size: 0.875rem;
   line-height: 1.7;
-  color: #555;
+  color: var(--cs-muted, #555);
 }
 
 /* Last decision card spans full width */
@@ -580,12 +620,18 @@
 
 /* Outcomes */
 .outcomeRich {
-  background: var(--bg-alt);
+  background: var(--cs-accent-light, var(--bg-alt));
   border-radius: 20px;
   padding: 48px;
   border: none;
+  border-left: 4px solid var(--cs-accent, var(--accent));
   max-width: 860px;
   margin: 40px auto;
+}
+
+/* Content area background for dark themes */
+.contentArea {
+  background: var(--cs-bg, transparent);
 }
 
 @media (max-width: 768px) {
@@ -595,4 +641,411 @@
   .compHeader span:nth-child(n+3),
   .compRow span:nth-child(n+3) { display: none; }
   .outcomeRich { padding: 28px 20px; }
+}
+/* ══════════════════════════════════════════════════════
+   THEME VARIANTS
+   ══════════════════════════════════════════════════════ */
+
+/* ── Dark (BART) ─────────────────────────────────────── */
+.pageDark { background: var(--cs-bg); color: var(--cs-text); }
+.pageDark .contentArea { background: var(--cs-bg); }
+.pageDark .back { color: var(--cs-muted); }
+.pageDark .back:hover { color: var(--cs-text); }
+.pageDark .heroTitle,
+.pageDark .richHeadline,
+.pageDark .bodyText { color: var(--cs-text); }
+.pageDark .heroTagline,
+.pageDark .statLabel,
+.pageDark .findingTheme,
+.pageDark .decisionBody,
+.pageDark .compCell,
+.pageDark .flowStep,
+.pageDark .iaNote { color: var(--cs-muted); }
+.pageDark .tag { background: var(--cs-bg-alt); color: var(--cs-muted); border: 1px solid var(--cs-border); }
+.pageDark .richBlock { border-color: var(--cs-border); }
+.pageDark .statBox { background: var(--cs-card); border-color: var(--cs-border); }
+.pageDark .findingCard { background: var(--cs-card); border-color: var(--cs-border); }
+.pageDark .findingQuote { color: var(--cs-text); }
+.pageDark .compTable { background: var(--cs-card); border-color: var(--cs-border); }
+.pageDark .compHeader { background: var(--cs-bg); color: var(--cs-muted); border-color: var(--cs-border); }
+.pageDark .compRow { border-color: var(--cs-border); }
+.pageDark .compRow:hover { background: var(--cs-bg); }
+.pageDark .compName { color: var(--cs-text); }
+.pageDark .decisionCard { background: var(--cs-card); border-color: var(--cs-border); }
+.pageDark .decisionTitle { color: var(--cs-text); }
+.pageDark .insightQuote { color: var(--cs-text); }
+.pageDark .outcomeRich { background: var(--cs-card); }
+.pageDark .nextSection { background: var(--cs-bg-alt); border-color: var(--cs-border); }
+.pageDark .nextTitle { color: var(--cs-text); }
+/* BART-specific: before/after + wireframes */
+.pageDark .baBefore { background: rgba(255,255,255,0.04); border-color: var(--cs-border); }
+.pageDark .baAfter { background: rgba(0,153,205,0.1); border-color: rgba(0,153,205,0.3); }
+.pageDark .baPairLabel { color: var(--cs-text); }
+.pageDark .baText { color: var(--cs-muted); }
+.pageDark .flowCard { background: var(--cs-card); border-color: var(--cs-border); }
+.pageDark .flowTitle { color: var(--cs-text); }
+.pageDark .flowStepNum { background: var(--cs-accent); color: white; }
+.pageDark .iaNoteBox { background: rgba(0,153,205,0.08); border-color: rgba(0,153,205,0.25); }
+
+/* ── Bold (Simmer) ───────────────────────────────────── */
+.pageBold .decisionCard { border-top: 4px solid var(--cs-accent); }
+.pageBold .statValue { font-size: 2.6rem; }
+.pageBold .personaCard { border: 2px solid var(--cs-border); }
+.pageBold .personaCard:hover { border-color: var(--cs-accent); }
+.pageBold .iterationCard { border-left: 4px solid var(--cs-accent); }
+.pageBold .insightQuote { font-size: 1.4rem; }
+
+/* ══════════════════════════════════════════════════════
+   NEW SECTION TYPES
+   ══════════════════════════════════════════════════════ */
+
+/* ── Before/After (BART) ─────────────────────────────── */
+.beforeAfterGrid { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+
+.baPair {
+  border: 1px solid var(--cs-border, var(--border));
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.baPairLabel {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cs-text, var(--text));
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--cs-border, var(--border));
+}
+
+.baColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.baBefore {
+  padding: 18px 20px;
+  background: rgba(0,0,0,0.03);
+  border-right: 1px solid var(--cs-border, var(--border));
+}
+
+.baAfter {
+  padding: 18px 20px;
+  background: color-mix(in srgb, var(--cs-accent, var(--accent)) 6%, transparent);
+}
+
+.baTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-bottom: 8px;
+}
+
+.baTagAfter {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  background: var(--cs-accent, var(--accent));
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-bottom: 8px;
+}
+
+.baText {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ── Wireframes (BART) ───────────────────────────────── */
+.flowsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0 20px;
+}
+
+.flowCard {
+  background: var(--cs-card, var(--white));
+  border: 1px solid var(--cs-border, var(--border));
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.flowTitle {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cs-text, var(--text));
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cs-border, var(--border));
+}
+
+.flowSteps { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.flowStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--cs-muted, var(--muted));
+  line-height: 1.5;
+}
+
+.flowStepNum {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cs-accent, var(--accent));
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.iaNoteBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: color-mix(in srgb, var(--cs-accent, var(--accent)) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cs-accent, var(--accent)) 20%, transparent);
+  border-radius: 12px;
+}
+
+.iaNoteIcon { color: var(--cs-accent, var(--accent)); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+.iaNote { font-size: 0.85rem; line-height: 1.6; color: var(--cs-muted, var(--muted)); }
+
+/* ── Personas (Simmer) ───────────────────────────────── */
+.personasGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.personaCard {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 22px 20px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.personaCard:hover { transform: translateY(-3px); }
+
+.personaTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.personaEmoji { font-size: 2.2rem; line-height: 1; }
+
+.personaName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.personaAge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.personaQuote {
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--cs-accent, var(--text));
+  border-left: 2px solid var(--cs-accent, var(--accent));
+  padding-left: 12px;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+}
+
+.personaLists { display: flex; flex-direction: column; gap: 12px; }
+.personaListLabel { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+.personaList { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.personaList li { font-size: 0.78rem; color: var(--text); line-height: 1.4; display: flex; align-items: flex-start; gap: 7px; }
+.personaList li::before { content: '✓'; color: var(--cs-accent, var(--accent)); font-size: 0.7rem; flex-shrink: 0; margin-top: 1px; }
+.personaListFrustrations li::before { content: '✕'; color: var(--red); }
+
+/* ── Decisions: editorial list (Hearth) ──────────────── */
+.decisionsList { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+
+.decisionsListItem {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--cs-border, var(--border));
+}
+
+.decisionsListItem:last-child { border-bottom: none; }
+
+.decisionsListNum {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--cs-accent, var(--accent));
+  opacity: 0.25;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 60px;
+  text-align: right;
+}
+
+.decisionsListBody { flex: 1; }
+
+.decisionsListTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--cs-text, var(--text));
+  margin-bottom: 8px;
+}
+
+.decisionsListText {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* ── Iteration / feedback (Simmer) ───────────────────── */
+.iterationGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+
+.iterationCard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  border-left: 4px solid var(--cs-accent, var(--accent));
+}
+
+.iterationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.iterationRound {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--cs-accent, var(--text));
+}
+
+.iterationParticipants {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  background: var(--bg-alt);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.iterationFinding {
+  background: var(--bg-alt);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.iterationFindingLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.iterationFindingText { font-size: 0.82rem; line-height: 1.6; color: var(--text); font-style: italic; }
+
+.iterationChangesLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.iterationChangesList { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.iterationChange {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.iterationChangeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cs-accent, var(--accent));
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ══════════════════════════════════════════════════════
+   EXISTING SECTIONS — themed via CSS vars
+   ══════════════════════════════════════════════════════ */
+.richBlock { border-color: var(--cs-border, var(--border)); }
+.statBox { background: var(--cs-card, var(--white)); border-color: var(--cs-border, var(--border)); }
+.statValue { color: var(--cs-accent, var(--blue)); }
+.statLabel { color: var(--cs-muted, var(--muted)); }
+.findingCard { background: var(--cs-card, var(--white)); border-color: var(--cs-border, var(--border)); border-left-color: var(--cs-accent, var(--accent)); }
+.findingQuote { color: var(--cs-text, var(--text)); }
+.findingTheme { color: var(--cs-muted, var(--muted)); }
+.compTable { background: var(--cs-card, var(--white)); border-color: var(--cs-border, var(--border)); }
+.compHeader { background: var(--cs-accent-light, var(--bg-alt)); color: var(--cs-muted, var(--muted)); border-color: var(--cs-border, var(--border)); }
+.compRow { border-color: var(--cs-border, var(--border)); }
+.compRow:hover { background: var(--cs-accent-light, var(--bg-alt)); }
+.highlightRow { background: color-mix(in srgb, var(--cs-accent, var(--accent)) 8%, transparent); font-weight: 600; }
+.highlightRow:hover { background: color-mix(in srgb, var(--cs-accent, var(--accent)) 14%, transparent); }
+.compName { color: var(--cs-text, var(--text)); }
+.compCell { color: var(--cs-muted, #555); }
+.insightQuote { border-left-color: var(--cs-accent, var(--red)); color: var(--cs-text, var(--text)); }
+.decisionCard { background: var(--cs-card, var(--white)); border-color: var(--cs-border, var(--border)); border-top-color: var(--cs-accent, var(--accent)); }
+.decisionNumber { color: var(--cs-accent, var(--accent-dark)); }
+.decisionTitle { color: var(--cs-text, var(--text)); }
+.decisionBody { color: var(--cs-muted, #555); }
+.outcomeRich { background: var(--cs-accent-light, var(--bg-alt)); border-left: 4px solid var(--cs-accent, var(--accent)); }
+.nextSection { background: var(--cs-bg-alt, var(--bg-alt)); border-color: var(--cs-border, var(--border)); }
+.nextTitle { color: var(--cs-text, var(--text)); }
+.contentArea { background: var(--cs-bg, transparent); }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .personasGrid { grid-template-columns: 1fr; }
+  .flowsGrid { grid-template-columns: 1fr; }
+  .iterationGrid { grid-template-columns: 1fr; }
+  .baColumns { grid-template-columns: 1fr; }
+  .baBefore { border-right: none; border-bottom: 1px solid var(--cs-border, var(--border)); }
+  .decisionsListItem { flex-direction: column; gap: 8px; }
+  .decisionsListNum { font-size: 1.5rem; width: auto; text-align: left; }
 }
