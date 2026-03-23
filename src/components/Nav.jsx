@@ -16,10 +16,11 @@ export default function Nav() {
   useEffect(() => { setOpen(false) }, [location])
 
   const links = [
-    { label: 'Work',    to: '/#projects' },
-    { label: 'About',   to: '/#about' },
-    { label: 'Skills',  to: '/#skills' },
-    { label: 'Contact', to: '/#contact' },
+    { label: 'Work',       to: '/#projects' },
+    { label: 'Playground', to: '/playground' },
+    { label: 'About',      to: '/#about' },
+    { label: 'Skills',     to: '/#skills' },
+    { label: 'Contact',    to: '/#contact' },
   ]
 
   return (

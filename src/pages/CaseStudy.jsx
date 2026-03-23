@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import HearthMockup from '../components/HearthMockup'
+import HearthMobileMockup from '../components/HearthMobileMockup'
 import SimmerMockup from '../components/SimmerMockup'
 import BARTMockup from '../components/BARTMockup'
 import styles from './CaseStudy.module.css'
@@ -272,6 +273,18 @@ function IterationSection({ section }) {
   )
 }
 
+// ── Mockup mobile ─────────────────────────────────────────────
+function MockupMobileSection({ section }) {
+  return (
+    <section className={`${styles.richBlock} ${styles.mockupBlock} reveal`}>
+      <span className="label">{section.label}</span>
+      <h2 className={styles.richHeadline}>{section.headline}</h2>
+      <p className={styles.bodyText}>{section.body}</p>
+      <HearthMobileMockup />
+    </section>
+  )
+}
+
 // ── Mockup ────────────────────────────────────────────────────
 function MockupSection({ section, slug }) {
   return (
@@ -309,6 +322,7 @@ const SECTION_MAP = {
   'decisions-list': DecisionsListSection,
   'iteration':      IterationSection,
   'mockup':         MockupSection,
+  'mockup-mobile':  MockupMobileSection,
   'outcomes':       OutcomesSection,
 }
 

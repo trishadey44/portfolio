@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
+import Playground from './components/Playground'
 import About from './components/About'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
@@ -66,6 +67,7 @@ function Home() {
     <>
       <Hero />
       <Projects />
+      <Playground preview />
       <About />
       <Skills />
       <Contact />
@@ -111,6 +113,7 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/playground" element={<><Playground /><Footer /></>} />
         <Route path="/case-study/:slug" element={<CaseStudy />} />
         <Route path="/resume" element={<Resume />} />
       </Routes>
