@@ -142,24 +142,20 @@
 .sliderTrack {
   display: flex;
   gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
   padding: 8px 40px 16px;
   list-style: none;
-  cursor: grab;
   user-select: none;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
 
-.sliderTrack::-webkit-scrollbar { display: none; }
-
-.grabbing { cursor: grabbing; }
-
 .sliderCard {
-  scroll-snap-align: start;
-  flex: 0 0 360px;
-  min-width: 0;
+  flex: 0 0 calc(33.333% - 18px);
+  min-width: 280px;
+}
+
+.scrollBtnDisabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
 }
 
 .sliderCard a {
@@ -176,39 +172,27 @@
   box-shadow: 0 24px 60px rgba(0,0,0,0.08);
 }
 
-.sliderFadeLeft {
+.scrollBtn {
   position: absolute;
-  left: 0; top: 0; bottom: 20px;
-  width: 40px;
-  background: linear-gradient(to right, var(--bg-alt), transparent);
-  pointer-events: none;
-  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
 }
-
-.sliderFadeRight {
-  position: absolute;
-  right: 0; top: 0; bottom: 20px;
-  width: 80px;
-  background: linear-gradient(to left, var(--bg-alt), transparent);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.sliderHint {
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  margin-top: 4px;
-}
-
-@media (max-width: 768px) {
-  .sliderCard { flex: 0 0 300px; }
-  .sliderTrack { padding: 8px 20px 16px; }
-}
-
-/* ── Card visual ─────────────────────────────────────── */
+.scrollBtn:hover:not(:disabled) { box-shadow: 0 6px 24px rgba(0,0,0,0.15); transform: translateY(calc(-50% - 2px)); }
+.scrollBtnLeft  { left: 12px; }
+.scrollBtnRight { right: 12px; }
 .cardVisual {
   display: flex;
   flex-direction: column;
@@ -261,3 +245,17 @@
   height: 100%;
   display: block;
 }
+
+.allLink {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: 8px;
+}
+.allLink:hover { color: var(--text); border-color: var(--text); }

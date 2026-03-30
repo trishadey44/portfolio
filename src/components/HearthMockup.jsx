@@ -203,7 +203,7 @@ function CardDetail({ onNav }) {
           {tab === 'notes' && (
             <div className={s.cardNotes}>
               <p className={s.noteText}>Audit all components in the current Figma library. Goal is to identify duplicates, outdated patterns, and anything not in the token system yet.</p>
-              <p className={s.noteText}>Start with navigation components — those are the most inconsistent across the 4 product areas.</p>
+              <p className={s.noteText}>Start with navigation components - those are the most inconsistent across the 4 product areas.</p>
               <div className={s.noteTag}>Last edited 2 hours ago</div>
             </div>
           )}
@@ -234,9 +234,9 @@ function CardDetail({ onNav }) {
               </div>
               <p className={s.aiPlanIntro}>Based on your goal to ship design system v2, here is a suggested approach for this audit:</p>
               {[
-                { step: '1', text: 'Timebox the audit to 2 days max — start with navigation and forms only', tag: 'Focus' },
+                { step: '1', text: 'Timebox the audit to 2 days max - start with navigation and forms only', tag: 'Focus' },
                 { step: '2', text: 'Use the 80/20 rule: fix the 20% of patterns causing 80% of inconsistency', tag: 'Strategy' },
-                { step: '3', text: 'This connects to your "Portfolio case studies" card — the audit findings could be a case study', tag: 'Connection' },
+                { step: '3', text: 'This connects to your "Portfolio case studies" card - the audit findings could be a case study', tag: 'Connection' },
               ].map((s2, i) => (
                 <div key={i} className={s.aiSuggestion}>
                   <span className={s.aiStepNum}>{s2.step}</span>
@@ -423,7 +423,7 @@ function QuickAdd({ onNav }) {
           </div>
           <div className={s.aiAutoSuggest}>
             <span className={s.aiAutoIcon}>✦</span>
-            <span className={s.aiAutoText}>Hearth can break this into subtasks — want a suggested plan?</span>
+            <span className={s.aiAutoText}>Hearth can break this into subtasks - want a suggested plan?</span>
             <span className={s.aiAutoLink}>Yes →</span>
           </div>
           <div className={s.quickAddFooter}>
@@ -465,7 +465,7 @@ export default function HearthMockup() {
             <span className={s.dot} style={{ background: '#FFBD2E' }} />
             <span className={s.dot} style={{ background: '#28CA41' }} />
           </div>
-          <span className={s.windowTitle}>hearth — {active.toLowerCase()}</span>
+          <span className={s.windowTitle}>hearth - {active.toLowerCase()}</span>
           <div style={{ width: 52 }} />
         </div>
         <div className={s.app}>

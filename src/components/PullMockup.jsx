@@ -186,7 +186,7 @@ function Submit({ onNav }) {
             <div className={s.uploadPreview} style={{ background: 'linear-gradient(135deg,#d4c5b0 0%,#b8a898 100%)', borderRadius: 12, marginBottom: 16 }} />
             <div className={s.submitField}>
               <label className={s.submitLabel}>What pulled you to this?</label>
-              <input className={s.submitInput} placeholder="optional — even half a thought is fine" defaultValue="the way the worn part catches light differently" />
+              <input className={s.submitInput} placeholder="optional - even half a thought is fine" defaultValue="the way the worn part catches light differently" />
             </div>
             <div className={s.tagGrid}>
               {['texture', 'light', 'color', 'type', 'shape', 'other'].map(t => (

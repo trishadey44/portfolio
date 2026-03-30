@@ -470,7 +470,7 @@ function AccessibilityScreen() {
         </div>
         <div className={s.textPreview}>
           <span style={{ fontSize: textSize === 'S' ? 10 : textSize === 'L' ? 16 : textSize === 'XL' ? 20 : 13 }}>
-            Preview — "Live departures in 3 min"
+            Preview - "Live departures in 3 min"
           </span>
         </div>
       </div>

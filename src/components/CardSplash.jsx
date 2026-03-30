@@ -1,4 +1,4 @@
-// App splash screens — branded launch screens
+// App splash screens - branded launch screens
 
 export function HearthSplash() {
   return (
@@ -75,3 +75,9 @@ export function SimmerSplash() {
     </svg>
   )
 }
+
+
+export { default as ComponentLibrarySplash } from './ComponentLibrarySplash'
+export { default as CocktailSplash } from './CocktailSplash'
+export { default as VeloursSplash } from './VeloursSplash'
+export { default as WobbleSplash } from './WobbleSplash'

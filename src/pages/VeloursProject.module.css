@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400&display=swap');
+
+/* ── Tokens ──────────────────────────────────────────────── */
+.page {
+  --paper:      #faf7f2;
+  --paper-deep: #f0ebe0;
+  --ink:        #141210;
+  --ink-mid:    #3d3830;
+  --ink-light:  #7a7065;
+  --sage:       #7a8c78;
+  --sage-pale:  #c8d4c6;
+  --sage-deep:  #3d4f3b;
+  --blush:      #e8cfc0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6%;
+  border-bottom: 0.5px solid var(--paper-deep);
+}
+.navMark {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.navMark:hover { opacity: 0.65; }
+.navCrumb {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  align-items: stretch;
+}
+.heroLeft {
+  padding: 8rem 5% 6rem 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 0.5px solid var(--paper-deep);
+}
+.heroKicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 3rem;
+}
+.heroH1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.heroH1 em { font-style: italic; color: var(--sage-deep); }
+.heroDesc {
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  max-width: 400px;
+  margin-bottom: 4rem;
+}
+.heroStats { display: flex; gap: 3rem; }
+.heroStat label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.3rem;
+}
+.heroStat span { font-size: 1rem; color: var(--ink-mid); }
+
+/* Hero right - roll */
+.heroRight {
+  background: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.heroRight::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 0.5px solid rgba(200,212,198,0.18);
+}
+.heroBgText {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 18rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.rollLuxury {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+.rollCylinder {
+  width: 160px;
+  height: 160px;
+  /* Toilet roll: circular top view - the roll seen from the side */
+  background: linear-gradient(to right,
+    #c8baa0 0%,
+    #e8dcc8 15%,
+    #f5f0e8 35%,
+    #faf7f2 50%,
+    #f0ebe0 65%,
+    #ddd0bc 82%,
+    #c0b090 100%
+  );
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.4),
+    inset -8px 0 20px rgba(0,0,0,0.12),
+    inset 4px 0 10px rgba(255,255,255,0.15);
+}
+/* Inner cardboard tube */
+.rollCylinder::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40px; height: 40px;
+  background: radial-gradient(circle, #8B6914 0%, #6B4E0A 60%, #4A3408 100%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,212,198,0.25);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5), 0 0 0 3px rgba(139,105,20,0.3);
+}
+/* Paper edge highlight at top */
+.rollCylinder::after {
+  content: '';
+  position: absolute;
+  top: 8%; left: 15%;
+  width: 70%; height: 12%;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  filter: blur(4px);
+}
+.rollBand {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--sage-deep);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  border-top: 0.5px solid rgba(200,212,198,0.25);
+  border-bottom: 0.5px solid rgba(200,212,198,0.25);
+}
+.rollBandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #c8d4c6;
+}
+.rollBandSub {
+  font-family: 'Jost', sans-serif;
+  font-size: 5.5px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(200,212,198,0.55);
+}
+
+/* ── Shared section layout ───────────────────────────────── */
+.section { padding: 6rem 6%; }
+.si { max-width: 940px; margin: 0 auto; }
+.stag {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.stag::after { content: ''; display: block; width: 40px; height: 0.5px; background: var(--sage-pale); }
+.si h2, h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 1.8rem;
+}
+.si h2 em, h2 em { font-style: italic; color: var(--sage-deep); }
+.si p { font-size: 1rem; color: var(--ink-mid); margin-bottom: 1.1rem; }
+
+/* ── Before/After ────────────────────────────────────────── */
+.cmp { background: var(--paper-deep); padding: 6rem 6%; }
+.cmpGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+.cmpLabel { text-align: center; margin-bottom: 2rem; }
+.cmpBadge {
+  display: inline-block;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 3px 14px;
+  border-radius: 20px;
+  border: 0.5px solid currentColor;
+  margin-bottom: 0.6rem;
+}
+.badgeBefore { color: #999; }
+.badgeAfter  { color: var(--sage); }
+.cmpLabel p { font-size: 0.78rem; margin: 0; color: var(--ink-mid); }
+
+/* Store brand before */
+.packBefore {
+  max-width: 260px;
+  margin: 0 auto;
+}
+.charminImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+}
+.pbStripe {
+  background: linear-gradient(160deg, #E91E8C 0%, #C2185B 100%);
+  color: white; padding: 10px 14px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  text-align: center;
+}
+.pbBrand { font-size: 7px; opacity: 0.8; letter-spacing: 0.12em; font-family: Arial, sans-serif; }
+.pbUltra { font-size: 24px; font-weight: 900; font-family: 'Georgia', serif; font-style: italic; text-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+.pbPlies {
+  font-size: 8px; font-weight: 400; font-family: Arial, sans-serif; opacity: 0.9;
+}
+.pbBears {
+  background: #fce4ec; padding: 5px 0 2px;
+  display: flex; justify-content: center; gap: 16px;
+}
+.pbBearIcon { font-size: 22px; line-height: 1; }
+.pbBody { padding: 10px 12px 8px; background: white; position: relative; }
+.pbRolls { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
+.big { font-size: 32px; font-weight: 900; color: #E91E8C; line-height: 1; font-family: Arial Black, sans-serif; }
+.txt { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #555; line-height: 1.3; font-family: Arial, sans-serif; }
+.pbSep { border: none; border-top: 1px solid #eee; margin: 6px 0; }
+.pbClaims { font-size: 8px; color: #444; line-height: 1.8; font-family: Arial, sans-serif; }
+.pbClaims strong { color: #E91E8C; font-weight: 700; }
+.pbBurst {
+  position: absolute; top: 8px; right: 8px;
+  width: 54px; height: 54px;
+  background: linear-gradient(135deg, #FFB300 0%, #FF8F00 100%);
+  border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: white; text-align: center;
+  font-size: 6.5px; font-weight: 900; line-height: 1.3; text-transform: uppercase;
+  font-family: Arial Black, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.pbBottom { background: #fce4ec; border-top: 1px solid #f8bbd0; padding: 5px 14px; font-size: 7.5px; color: #888; text-align: center; font-family: Arial, sans-serif; }
+
+/* VELOURS after */
+.packAfter {
+  max-width: 260px;
+  margin: 0 auto;
+  background: var(--sage-deep);
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 24px;
+}
+.packAfter::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 0.5px solid rgba(200,212,198,0.2);
+  pointer-events: none;
+}
+.paTop { position: relative; z-index: 1; }
+.paHouse { font-family: 'Jost', sans-serif; font-size: 5.5px; font-weight: 300; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(200,212,198,0.6); text-align: center; margin-bottom: 4px; }
+.paOrnament { font-family: 'Playfair Display', serif; font-size: 11px; color: rgba(200,212,198,0.35); text-align: center; margin-bottom: 10px; }
+.paName { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; letter-spacing: 0.22em; text-align: center; color: #ddd8cc; line-height: 1; text-transform: uppercase; width: 100%; display: block; }
+.paSub { font-family: 'Playfair Display', serif; font-size: 8.5px; font-weight: 400; font-style: italic; letter-spacing: 0.08em; text-align: center; color: rgba(200,212,198,0.55); margin-top: 5px; }
+.paRule { width: 36px; height: 0.5px; background: rgba(200,212,198,0.3); margin: 14px auto; }
+.paMid { position: relative; z-index: 1; text-align: center; }
+.paDetail { font-family: 'Jost', sans-serif; font-size: 5.5px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(200,212,198,0.45); line-height: 2.2; }
+.paTagline { font-family: 'Playfair Display', serif; font-size: 10px; font-style: italic; font-weight: 400; color: rgba(200,212,198,0.65); letter-spacing: 0.06em; margin-top: 10px; display: block; }
+.paBottom { position: relative; z-index: 1; font-family: 'Jost', sans-serif; font-size: 5.5px; font-weight: 300; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(200,212,198,0.3); text-align: center; }
+
+/* ── Manifesto (dark) ────────────────────────────────────── */
+.manifesto { background: var(--ink); color: var(--paper); padding: 8rem 6%; }
+.stagDark { color: rgba(200,212,198,0.55); }
+.stagDark::after { background: rgba(200,212,198,0.12) !important; }
+.h2Dark { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.1; color: var(--paper); margin-bottom: 1.8rem; }
+.h2Dark em { font-style: italic; color: var(--sage-pale); }
+.pDark { font-size: 1rem; color: rgba(250,247,242,0.6); margin-bottom: 1.1rem; }
+.manifestoPull {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--paper);
+  border-left: 1.5px solid var(--sage);
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  margin: 3.5rem 0;
+}
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
+.pillar { border-top: 0.5px solid rgba(200,212,198,0.2); padding-top: 1.5rem; }
+.pillarN { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 400; color: var(--sage); opacity: 0.3; line-height: 1; margin-bottom: 0.5rem; }
+.pillarH4 { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage-pale); margin-bottom: 0.6rem; }
+
+/* ── Copy wall ───────────────────────────────────────────── */
+.copyWall {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 3.5rem;
+  background: var(--paper-deep);
+  border: 0.5px solid var(--paper-deep);
+}
+.copyPanel { background: var(--paper); padding: 2.5rem; }
+.cpSurface { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+.cpTitle { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--ink); margin-bottom: 0.7rem; }
+.cpBody { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.85; }
+
+/* ── Brand identity ──────────────────────────────────────── */
+.identity { background: var(--paper-deep); padding: 6rem 6%; }
+.idGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; }
+.idSubhead { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem; }
+.swatches { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1rem; }
+.sw { display: flex; align-items: center; gap: 1rem; }
+.swDot { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; }
+.swLabel { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); font-weight: 400; display: block; margin-bottom: 0.15rem; }
+.swHex { font-size: 0.82rem; color: var(--ink-light); font-family: 'Playfair Display', serif; font-style: italic; }
+.typePair { margin-top: 1rem; display: flex; flex-direction: column; gap: 2rem; }
+.tp { border-bottom: 0.5px solid var(--paper-deep); padding-bottom: 1.5rem; }
+.tpName { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; }
+.tpDemoSerif { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 400; color: var(--ink); line-height: 1; }
+.tpDemoSerifIt { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; font-style: italic; color: var(--ink-mid); line-height: 1.2; }
+.tpDemoSans { font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-mid); }
+
+/* ── Closing ─────────────────────────────────────────────── */
+.closing {
+  background: var(--sage-deep);
+  text-align: center;
+  padding: 10rem 6%;
+  position: relative;
+  overflow: hidden;
+}
+.closing::before {
+  content: 'VELOURS';
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 22rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.035);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.closingInner { position: relative; z-index: 1; }
+.closingEyebrow { font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(200,212,198,0.55); margin-bottom: 2rem; }
+.closingLine { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 400; font-style: italic; color: #ddd8cc; line-height: 1.2; }
+.closingRule { width: 1px; height: 60px; background: rgba(200,212,198,0.25); margin: 2.5rem auto; }
+.closingSub { font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(200,212,198,0.4); }
+
+/* ── Footer note ─────────────────────────────────────────── */
+.footerNote {
+  padding: 2.5rem 6%;
+  border-top: 0.5px solid var(--paper-deep);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerName { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--ink-mid); }
+.footerText { font-size: 0.78rem; color: var(--ink-light); letter-spacing: 0.03em; text-align: right; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 740px) {
+  .hero { grid-template-columns: 1fr; }
+  .heroRight { min-height: 40vh; }
+  .cmpGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .pillars { grid-template-columns: 1fr; }
+  .copyWall { grid-template-columns: 1fr; }
+  .idGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .footerNote { flex-direction: column; gap: 1rem; text-align: center; }
+  .footerText { text-align: center; }
+}
+
+
+/* ── 4-roll SVG group ──────────────────────────────────── */
+.rollGroup {
+  position: relative;
+  z-index: 1;
+  width: min(320px, 80%);
+}
+
+.rollSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}

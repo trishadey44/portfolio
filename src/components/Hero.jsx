@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './Hero.module.css'
 
-const ROLES = ['UX Designer', 'UI Designer', 'Software Engineer', 'Creative Thinker']
+const ROLES = ['UX Designer', 'UI Designer', 'Software Engineer', 'Program Manager', 'Creative Thinker']
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 function useScramble(target) {
@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         <h1 className={`${styles.headline} ${mounted ? styles.visible : ''}`}>
-          Hi, I'm <em>Trisha</em>—<br />
+          Hi, I'm <em>Trisha</em>-<br />
           <span className={styles.roleWrap}>
             <span className={styles.role}>{scrambled}</span>
           </span>

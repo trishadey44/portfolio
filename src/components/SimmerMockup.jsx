@@ -295,7 +295,7 @@ function CookMode({ onNav }) {
         )}
         {cur.timer && (
           <button className={`${s.cookTimer} ${timerOn ? s.cookTimerOn : ''}`} onClick={() => setTimerOn(t => !t)}>
-            {timerOn ? `⏱ Running — ${Math.floor(cur.timer / 60)}:${String(cur.timer % 60).padStart(2, '0')}` : `⏱ Start ${cur.timer >= 60 ? Math.floor(cur.timer / 60) + 'm ' : ''}${cur.timer % 60 > 0 ? cur.timer % 60 + 's' : ''} timer`}
+            {timerOn ? `⏱ Running - ${Math.floor(cur.timer / 60)}:${String(cur.timer % 60).padStart(2, '0')}` : `⏱ Start ${cur.timer >= 60 ? Math.floor(cur.timer / 60) + 'm ' : ''}${cur.timer % 60 > 0 ? cur.timer % 60 + 's' : ''} timer`}
           </button>
         )}
       </div>

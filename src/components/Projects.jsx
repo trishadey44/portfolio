@@ -1,94 +1,74 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
-import { HearthSplash, BARTSplash, SimmerSplash } from './CardSplash'
+import { HearthSplash, BARTSplash, SimmerSplash, ComponentLibrarySplash } from './CardSplash'
+import VeloursSplash from './VeloursSplash'
 import styles from './Projects.module.css'
 
 const SPLASH_MAP = {
   'hearth':        HearthSplash,
   'bart-redesign': BARTSplash,
   'simmer':        SimmerSplash,
+  'velours':       VeloursSplash,
 }
 
 export default function Projects() {
-  const useSlider = projects.length > 3
-  const trackRef = useRef(null)
-  const [dragging, setDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
+  const [index, setIndex] = useState(0)
+  const total = projects.length
 
-  const onMouseDown = (e) => {
-    setDragging(true)
-    setStartX(e.pageX - trackRef.current.offsetLeft)
-    setScrollLeft(trackRef.current.scrollLeft)
-  }
-  const onMouseMove = (e) => {
-    if (!dragging) return
-    e.preventDefault()
-    const x = e.pageX - trackRef.current.offsetLeft
-    trackRef.current.scrollLeft = scrollLeft - (x - startX)
-  }
-  const onMouseUp = () => setDragging(false)
+  const prev = () => setIndex(i => Math.max(0, i - 1))
+  const next = () => setIndex(i => Math.min(total - 3, i + 1))
 
-  const onTouchStart = (e) => {
-    setStartX(e.touches[0].pageX - trackRef.current.offsetLeft)
-    setScrollLeft(trackRef.current.scrollLeft)
-  }
-  const onTouchMove = (e) => {
-    const x = e.touches[0].pageX - trackRef.current.offsetLeft
-    trackRef.current.scrollLeft = scrollLeft - (x - startX)
-  }
+  const canPrev = index > 0
+  const canNext = index < total - 3
+
+  // Visible projects: always show 3
+  const visible = projects.slice(index, index + 3)
 
   return (
     <section className={`${styles.section} section`} id="projects">
       <div className="container">
         <div className={`${styles.header} reveal`}>
-          <span className="label">Selected Work</span>
-          <h2 className={styles.title}>Things I've built<br />and designed</h2>
+          <div>
+            <span className="label">Selected Work</span>
+            <h2 className={styles.title}>Things I've built<br />and designed</h2>
+          </div>
+          <Link to="/all-projects" className={styles.allLink}>All projects →</Link>
         </div>
       </div>
 
-      {useSlider ? (
-        <div className={styles.sliderWrap}>
-          <div className={styles.sliderFadeLeft} />
-          <ul
-            ref={trackRef}
-            className={`${styles.sliderTrack} ${dragging ? styles.grabbing : ''}`}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseUp}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-          >
-            {projects.map((project, i) => (
-              <li key={project.slug} className={styles.sliderCard}>
-                <ProjectCard project={project} i={i} />
-              </li>
-            ))}
-          </ul>
-          <div className={styles.sliderFadeRight} />
-          <p className={styles.sliderHint}>← drag to explore →</p>
-        </div>
-      ) : (
-        <div className="container">
-          <ul className={styles.grid}>
-            {projects.map((project, i) => (
-              <li key={project.slug} className={`${styles.card} reveal`} style={{ transitionDelay: `${i * 0.1}s` }}>
-                <ProjectCard project={project} i={i} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className={styles.sliderWrap}>
+        <button
+          className={`${styles.scrollBtn} ${styles.scrollBtnLeft} ${!canPrev ? styles.scrollBtnDisabled : ''}`}
+          onClick={prev}
+          aria-label="Previous"
+          disabled={!canPrev}
+        >‹</button>
+
+        <ul className={styles.sliderTrack}>
+          {visible.map((project, i) => (
+            <li key={project.slug} className={styles.sliderCard}>
+              <ProjectCard project={project} i={projects.indexOf(project)} />
+            </li>
+          ))}
+        </ul>
+
+        <button
+          className={`${styles.scrollBtn} ${styles.scrollBtnRight} ${!canNext ? styles.scrollBtnDisabled : ''}`}
+          onClick={next}
+          aria-label="Next"
+          disabled={!canNext}
+        >›</button>
+      </div>
     </section>
   )
 }
 
 function ProjectCard({ project, i }) {
   const Splash = SPLASH_MAP[project.slug]
+  const dest = project.externalPage || `/case-study/${project.slug}`
   return (
-    <Link to={`/case-study/${project.slug}`} data-hover>
+    <Link to={dest} data-hover>
       <div className={styles.cardThumb} style={{ '--card-color': project.color }}>
         {Splash ? (
           <div className={styles.cardSplash}>
@@ -100,7 +80,7 @@ function ProjectCard({ project, i }) {
           </div>
         )}
         <div className={styles.cardOverlay}>
-          <span className={styles.viewLabel}>View Case Study →</span>
+          <span className={styles.viewLabel}>{project.externalPage ? 'View Project →' : 'View Case Study →'}</span>
         </div>
       </div>
       <div className={styles.cardBody}>

@@ -238,6 +238,45 @@
   gap: 12px;
 }
 
+.prevNextRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.prevNextItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prevNextRight {
+  text-align: right;
+}
+
+.prevNextRight .nextLink {
+  justify-content: flex-end;
+}
+
+.prevArrow {
+  font-size: 3rem;
+  transition: transform 0.3s var(--ease-out-expo);
+  flex-shrink: 0;
+}
+
+.nextLink:hover .prevArrow {
+  transform: translateX(-8px);
+}
+
+@media (max-width: 640px) {
+  .prevNextRow {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .prevNextRight { text-align: left; }
+  .prevNextRight .nextLink { justify-content: flex-start; }
+}
+
 .nextLink {
   display: flex;
   align-items: center;
@@ -1012,7 +1051,7 @@
 }
 
 /* ══════════════════════════════════════════════════════
-   EXISTING SECTIONS — themed via CSS vars
+   EXISTING SECTIONS - themed via CSS vars
    ══════════════════════════════════════════════════════ */
 .richBlock { border-color: var(--cs-border, var(--border)); }
 .statBox { background: var(--cs-card, var(--white)); border-color: var(--cs-border, var(--border)); }

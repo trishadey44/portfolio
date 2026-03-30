@@ -1,0 +1,372 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-top: 100px;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.pageHeader { padding: 40px 0 52px; }
+
+.back {
+  font-size: 0.82rem; color: var(--muted); text-decoration: none;
+  display: inline-block; margin-bottom: 28px; transition: color 0.2s;
+}
+.back:hover { color: var(--text); }
+
+.heroRow {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 40px; flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent); display: block; margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900; color: var(--text); line-height: 1.05; margin-bottom: 12px;
+}
+
+.sub {
+  font-size: 0.95rem; color: var(--muted); line-height: 1.65; max-width: 540px;
+}
+
+.statRow { display: flex; gap: 32px; flex-shrink: 0; padding-top: 8px; }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.statNum {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 900;
+  color: var(--accent); line-height: 1;
+}
+.statLabel {
+  font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted);
+}
+
+/* ── Blocks ──────────────────────────────────────────────── */
+.block { padding: 52px 0; border-top: 1px solid var(--border); }
+.blockHead { margin-bottom: 28px; }
+.blockTitle {
+  font-family: var(--font-display); font-size: 1.25rem;
+  font-weight: 800; color: var(--text); margin-bottom: 6px;
+}
+.blockNote { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+
+/* ── Simulator ───────────────────────────────────────────── */
+.simulator {
+  display: grid; grid-template-columns: 280px 1fr; gap: 32px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+}
+
+.simLabel {
+  font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); margin-bottom: 14px;
+}
+
+.cocktailGrid { display: flex; flex-direction: column; gap: 7px; }
+
+.cocktailBtn {
+  text-align: left; background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 9px; padding: 9px 14px; font-family: var(--font-body);
+  font-size: 0.82rem; color: var(--muted); cursor: pointer;
+  transition: all 0.15s; width: 100%;
+}
+.cocktailBtn:hover:not(:disabled) { border-color: var(--cc); color: var(--text); }
+.cocktailBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.cocktailBtnOn {
+  background: color-mix(in srgb, var(--cc) 10%, transparent);
+  border-color: var(--cc); color: var(--text); font-weight: 600;
+}
+
+/* ── Machine visual ──────────────────────────────────────── */
+.machine { display: flex; flex-direction: column; gap: 12px; }
+
+.pumpRow {
+  display: flex; gap: 6px; background: #0F1117; border-radius: 12px;
+  padding: 14px 12px 8px; justify-content: center;
+}
+
+.pump { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+
+.pumpHead {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid #2E3347;
+}
+
+.pourWrap { height: 28px; width: 4px; position: relative; overflow: visible; }
+
+.pourTube {
+  width: 3px; height: 100%; border-radius: 2px; margin: 0 auto;
+}
+
+.pourDrop {
+  width: 6px; height: 6px; border-radius: 50%;
+  position: absolute; left: -1.5px; bottom: -4px;
+  animation: drip 0.5s ease-in-out infinite;
+  animation-play-state: paused;
+  opacity: 0.8;
+}
+@keyframes drip {
+  0%   { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(8px); opacity: 0; }
+}
+
+.pumpLabel {
+  font-family: var(--font-mono); font-size: 0.48rem; color: #555;
+  text-align: center; white-space: nowrap; max-width: 30px; overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glassWrap { display: flex; justify-content: center; }
+
+.glass {
+  width: 60px; height: 80px;
+  border: 2px solid var(--border); border-top: none;
+  border-radius: 0 0 12px 12px; background: var(--bg);
+  position: relative; overflow: hidden; display: flex;
+  align-items: flex-end;
+}
+
+.liquid { width: 100%; border-radius: 0 0 10px 10px; }
+
+.doneMsg {
+  text-align: center; font-family: var(--font-display);
+  font-size: 0.9rem; font-weight: 700; font-style: italic;
+}
+.pouringMsg {
+  text-align: center; font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--muted);
+}
+
+.ingredients { margin-top: 4px; }
+.ingredientsLabel {
+  font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); margin-bottom: 8px;
+}
+.ingredientsList { display: flex; flex-wrap: wrap; gap: 6px; }
+.ingredientChip {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  padding: 4px 10px; border-radius: 100px;
+  border: 1.5px solid var(--border); color: var(--muted); background: var(--bg);
+}
+
+/* ── How it works ────────────────────────────────────────── */
+.flowRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+.flowCard {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px;
+}
+
+.flowStep {
+  font-family: var(--font-mono); font-size: 0.62rem; color: var(--accent);
+  letter-spacing: 0.1em; display: block; margin-bottom: 10px;
+}
+.flowTitle {
+  font-family: var(--font-display); font-size: 0.92rem;
+  font-weight: 800; color: var(--text); margin-bottom: 8px; line-height: 1.25;
+}
+.flowBody { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Components ──────────────────────────────────────────── */
+.componentList { display: flex; flex-direction: column; }
+
+.componentRow {
+  display: flex; align-items: baseline; gap: 24px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.componentRow:last-child { border-bottom: none; }
+.componentName {
+  font-family: var(--font-display); font-size: 0.92rem; font-weight: 700;
+  color: var(--text); min-width: 200px; flex-shrink: 0;
+}
+.componentDetail { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+
+/* ── Code ────────────────────────────────────────────────── */
+.code {
+  background: #0F1117; color: #E8DFD0;
+  font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.7;
+  padding: 28px 32px; border-radius: 14px; overflow-x: auto;
+  white-space: pre; margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .simulator { grid-template-columns: 1fr; }
+  .flowRow { grid-template-columns: 1fr 1fr; }
+  .heroRow { flex-direction: column; gap: 24px; }
+}
+@media (max-width: 560px) {
+  .flowRow { grid-template-columns: 1fr; }
+  .pumpRow { gap: 3px; }
+  .code { font-size: 0.68rem; padding: 18px; }
+}
+
+/* ── Photo placeholders ──────────────────────────────────── */
+.photoGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photoGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.photoSlot {
+  border: 1.5px dashed var(--border);
+  border-radius: 14px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt);
+  transition: border-color 0.2s;
+  cursor: default;
+}
+.photoSlot:hover { border-color: var(--muted); }
+.photoSlotTall { height: 300px; }
+
+.photoInner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+}
+
+.photoIcon {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--border);
+}
+
+.photoLabel {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.photoHint {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  opacity: 0.6;
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+/* ── Process grid ────────────────────────────────────────── */
+.processGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.processCard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.processNum {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.processTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.processBody {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Code blocks ─────────────────────────────────────────── */
+.codeStack { display: flex; flex-direction: column; gap: 16px; }
+
+.codeBlock {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.codeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.codeTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.codeRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.codeLang {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.copyBtn {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 3px 8px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.copyBtn:hover { border-color: var(--text); color: var(--text); }
+
+.codePre {
+  background: #0F1117;
+  color: #E8DFD0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  padding: 24px 28px;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+
+/* ── Responsive additions ────────────────────────────────── */
+@media (max-width: 900px) {
+  .photoGrid3 { grid-template-columns: 1fr; }
+  .photoGrid2 { grid-template-columns: 1fr; }
+  .processGrid { grid-template-columns: 1fr; }
+}

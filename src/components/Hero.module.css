@@ -84,7 +84,7 @@
   line-height: 1.4;
 }
 
-/* Fixed height — immune to text length changes */
+/* Fixed height - immune to text length changes */
 .roleWrap {
   display: block;
   height: calc(0.75em * 1.4);

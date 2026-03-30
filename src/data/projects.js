@@ -2,9 +2,9 @@ export const projects = [
   {
     slug: 'hearth',
     title: 'Hearth',
-    tagline: 'A Kanban for your whole life — not just your to-do list',
+    tagline: 'A Kanban board, but for your entire life',
     category: 'UX / Product Design',
-    year: '2025',
+    year: '2026',
     color: '#C17F3E',
     tags: ['UX Research', 'AI/ML UX', 'Product Design', 'Prototyping', 'Figma'],
     cardVisual: {
@@ -19,23 +19,18 @@ export const projects = [
       accent: '#C17F3E', accentLight: '#F9EFE3', accentMuted: '#E8C49A',
       bg: 'var(--bg)', bgAlt: 'var(--bg-alt)', dark: '#5C3D1E', heroStyle: 'warm',
     },
-    description: 'Hearth is a planning tool built for regular people, not power users. One place for work projects, health goals, home tasks, and creative side projects. Each card carries enough context to be useful. The AI does not just remind you what to do. It helps you figure out how.',
+    description: 'Hearth is a planning tool built for everyday users. It is a one stop shop for your personal, work, health, home, and creative goals. Every card offers a detailed snapshot of everything you need to know about each task. And with the power of AI, users can not only be reminded of what to do, but how to do it.',
     sections: [
       {
         type: 'problem',
         label: 'Problem Definition',
-        headline: 'You have 6 apps and none of them talk to each other.',
-        body: 'Most people manage their lives across too many apps. Notion for work, a fitness tracker for health, a notes app for ideas, a calendar for dates, a group chat for home stuff, and a reminders app for the rest. Each one works fine on its own terms. None of them share information or talk to each other. The result is a system nobody planned and nobody can keep up with.\n\nThe real problem is not the number of apps. It is that most productivity tools were built to track tasks, not help you plan a life. They are good at helping you check things off. They are not built to help you figure out how to get something done, or how one goal connects to another. Hearth started from that gap.',
-        stats: [
-          { value: '6+', label: 'Apps the avg. person uses to manage their life' },
-          { value: '58%', label: 'Still use paper because their apps do not cover everything' },
-          { value: '4 in 5', label: 'People have tried and quit a productivity system' },
-        ],
+        headline: "You're juggling 6 apps and none of them talk to each other.",
+        body: 'Most people manage their lives across too many apps. Notion for work, a fitness tracker for health, a notes app for ideas, a calendar for dates, a group chat for home stuff, and a reminders app for the rest. Each one works fine on its own, but none of them share information or talk to each other. The result is a chaotic number of clicks and swipes just to complete your day.\n\nNot only does Hearth help you to complete tasks, but it helps you understand how each of your goals can connect to another. Coherence brought to everyday living!',
       },
       {
         type: 'research-quotes',
         label: 'Research',
-        headline: 'We talked to 16 people who had given up on getting organized.',
+        headline: 'I interviewed 16 people with diverse backgrounds to understand how they organize their lives.',
         intro: 'I spoke with 16 people across different life stages: a freelancer, a new parent, a student, a marketing manager, a nurse, a small business owner. Every single one had tried to get organized before. Every single one had quit. I wanted to understand not just what they needed now, but why the last thing they tried had stopped working.',
         findings: [
           { quote: '"I have a Notion setup I spent a weekend building. I stopped using it after two weeks."', theme: 'Setup cost kills habits before they form' },
@@ -43,12 +38,12 @@ export const projects = [
           { quote: '"I know what I need to do. I just do not know how to start or break it down."', theme: 'Knowing a goal is not the same as having a plan' },
           { quote: '"I want a tool that feels like mine, not like a corporate project manager."', theme: 'Emotional ownership is what keeps people coming back' },
         ],
-        insight: 'Nobody has built a planning tool for the full complexity of a human life. Most were built for your job.',
+        insight: '',
       },
       {
         type: 'decisions-list',
         label: 'Design Decisions',
-        headline: 'Five decisions that made Hearth feel like a life tool, not a work tool.',
+        headline: 'Five choices that made Hearth built for the full complexity of a human life.',
         decisions: [
           { number: '01', title: 'Life Areas, not just projects', body: 'In most tools, everything is a project with a start date and an end date. But life does not work that way. Work is ongoing. Health is ongoing. Home upkeep is ongoing. Hearth is built around Life Areas that never close: Work, Health, Home, Relationships, Creative. You set them up once. No new workspace needed every time your priorities shift.' },
           { number: '02', title: 'Cards with real depth', body: 'A task in most apps is a title and a due date. A card in Hearth carries the full picture: the life area it belongs to, the goal it is attached to, any notes or sub-tasks, and an AI breakdown of how to actually start. The card is a planning tool, not just a reminder.' },
@@ -66,20 +61,14 @@ export const projects = [
       {
         type: 'mockup-mobile',
         label: 'Mobile',
-        headline: 'Built for the phone in your pocket too.',
+        headline: 'Built to use on the go too.',
         body: 'Hearth works on mobile without losing any of the depth. The layout reflows into a single-column view built for thumb navigation. Life View, card detail, and AI suggestions all adapt to a smaller screen.',
       },
       {
         type: 'outcomes',
         label: 'Conclusions',
         headline: 'What happened when we put it in front of real people.',
-        body: 'Usability testing with 12 participants showed that the Life View got the most attention. Every single participant spent time in it without being prompted. Seven of the twelve said out loud that they wanted this on their phone.\n\nThe AI suggestions landed best with people who described themselves as stuck starters. People who know what they want to do but freeze when it comes to starting. Three participants worked through a real personal goal during the session. Each one said it was the first time a tool had actually helped them do that.',
-        stats: [
-          { value: '12/12', label: 'Participants explored Life View without being asked' },
-          { value: '7/12', label: 'Said they wanted this on their phone immediately' },
-          { value: '83%', label: 'Rated AI suggestions as "actually useful"' },
-          { value: '3', label: 'Participants planned a real goal during the session' },
-        ],
+        body: 'Usability testing showed that the Life View got the most attention. Every single participant spent time in it without being prompted.\n\nAI suggestions resonated most with people who struggle to get started. Just as importantly, people were able to use Hearth fluidly while moving through real life. It felt portable, personal, and easy to return to. More than helping people track progress, Hearth helped them feel ownership over it. That was the clearest signal from testing: this did not feel like another system to manage. It felt like a tool that could actually support daily life.',
       },
     ],
     images: [],
@@ -105,13 +94,13 @@ export const projects = [
       accent: '#0099CD', accentLight: '#E6F6FC', accentMuted: '#7FCCE6',
       bg: '#0D1B2A', bgAlt: '#152032', dark: '#FFD520', heroStyle: 'dark',
     },
-    description: 'A ground-up redesign of the BART mobile app — focused on making real-time transit information feel fast, clear, and accessible to every type of rider in the Bay Area. From the daily commuter to the first-time tourist to the rider who depends on elevator status to board at all.',
+    description: 'A ground-up redesign of the BART mobile app - focused on making real-time transit information feel fast, clear, and accessible to every type of rider in the Bay Area. From the daily commuter to the first-time tourist to the rider who depends on elevator status to board at all.',
     sections: [
       {
         type: 'problem',
         label: 'Problem Definition',
         headline: 'The current BART app works. It just does not work well.',
-        body: 'BART is the backbone of Bay Area transit — serving over 130,000 daily riders across 50 stations. But its app is stuck in the past. Navigation is confusing, real-time information is buried, accessibility features are an afterthought, and the visual design has not kept pace with how people actually use their phones on a commute.\n\nThe problems compound for specific user groups. Tourists do not know the line system and have no way to orient themselves. Riders who depend on elevators must hunt through multiple screens to find out if one is working — information that determines whether they can board at all. And commuters who use the app daily have learned to work around its limitations rather than with them.',
+        body: 'BART is the backbone of Bay Area transit - serving over 130,000 daily riders across 50 stations. But its app is stuck in the past. Navigation is confusing, real-time information is buried, accessibility features are an afterthought, and the visual design has not kept pace with how people actually use their phones on a commute.\n\nThe problems compound for specific user groups. Tourists do not know the line system and have no way to orient themselves. Riders who depend on elevators must hunt through multiple screens to find out if one is working - information that determines whether they can board at all. And commuters who use the app daily have learned to work around its limitations rather than with them.',
         stats: [
           { value: '130k+', label: 'Daily BART riders served' },
           { value: '2.1★', label: 'App Store rating before redesign' },
@@ -131,7 +120,7 @@ export const projects = [
           {
             label: 'Station Detail',
             before: 'One long scroll mixing departures, amenities, parking, elevator status, and maps. Critical info like elevator status buried below the fold.',
-            after: 'Four focused tabs: Overview, Schedules, Elevators, Map. Elevator status shown in the header of every station page — always visible, never buried.',
+            after: 'Four focused tabs: Overview, Schedules, Elevators, Map. Elevator status shown in the header of every station page - always visible, never buried.',
           },
           {
             label: 'Trip Planning',
@@ -147,7 +136,7 @@ export const projects = [
         body: 'I conducted 13 user interviews and 2 rounds of usability testing on the existing BART app, recruiting across three segments: daily commuters, occasional tourists and visitors, and riders with accessibility needs. I also ran a competitive analysis across 4 transit apps to benchmark against best-in-class patterns.',
         findings: [
           { quote: '"I just want to know if my train is on time and which platform. Why does it take 4 taps to find that?"', theme: 'Commuters want live departures front and center' },
-          { quote: '"I had no idea which line to take. The map is tiny and the colors all look the same to me."', theme: 'Tourists lack orientation — the line system is invisible' },
+          { quote: '"I had no idea which line to take. The map is tiny and the colors all look the same to me."', theme: 'Tourists lack orientation - the line system is invisible' },
           { quote: '"I have to check elevator status before I leave my house. If the elevator is out I cannot go."', theme: 'Accessibility info is life-critical, not a nice-to-have' },
           { quote: '"I saved my stations as favorites and now I cannot find them. Everything moves around."', theme: 'Inconsistent navigation destroys trust in returning users' },
         ],
@@ -177,9 +166,9 @@ export const projects = [
         headline: 'Six decisions that put the rider first.',
         decisions: [
           { number: '01', title: 'Live departures on the home screen', body: 'The single most common task is checking when the next train leaves from a saved station. In the old app this required 3 taps minimum. In the redesign, favorite stations show live departures directly on the home screen. Zero taps for the most frequent use case.' },
-          { number: '02', title: 'Elevator status as a first-class feature', body: 'Riders who depend on elevators check status before leaving home — sometimes before deciding to take BART at all. The redesign surfaces elevator status on every station card, the station detail page header, and the Accessibility tab. Never more than one tap away.' },
-          { number: '03', title: 'Line color as a navigation system', body: 'BART has five lines, each with a distinct color. The redesign treats line color as a primary navigation signal — every departure, route result, and station indicator uses the official line color at full saturation. Riders orient by color before they read the text.' },
-          { number: '04', title: 'Trip planning with real preferences', body: 'The redesign adds four preference modes: Fastest, Fewest Transfers, Least Walking, and Avoid Stairs — the last built specifically for riders with mobility needs. Trip results show duration, fare, transfer points, and accessibility notes in one scannable card.' },
+          { number: '02', title: 'Elevator status as a first-class feature', body: 'Riders who depend on elevators check status before leaving home - sometimes before deciding to take BART at all. The redesign surfaces elevator status on every station card, the station detail page header, and the Accessibility tab. Never more than one tap away.' },
+          { number: '03', title: 'Line color as a navigation system', body: 'BART has five lines, each with a distinct color. The redesign treats line color as a primary navigation signal - every departure, route result, and station indicator uses the official line color at full saturation. Riders orient by color before they read the text.' },
+          { number: '04', title: 'Trip planning with real preferences', body: 'The redesign adds four preference modes: Fastest, Fewest Transfers, Least Walking, and Avoid Stairs - the last built specifically for riders with mobility needs. Trip results show duration, fare, transfer points, and accessibility notes in one scannable card.' },
           { number: '05', title: 'Station pages with tabs, not scroll', body: 'Station pages in the old app were a single long scroll. The redesign breaks this into four focused tabs: Overview, Schedules, Elevators, and Map. Riders who want live departures no longer scroll past parking info to get there.' },
           { number: '06', title: 'Dark mode as the default', body: 'BART riders use their phones in tunnels, on platforms at night, and during early-morning commutes. A dark-mode-first UI reduces eye strain, makes line colors pop against a dark background, and signals that this is a tool built for real transit use.' },
         ],
@@ -188,13 +177,13 @@ export const projects = [
         type: 'mockup',
         label: 'Hi-Fi Prototype',
         headline: 'Six screens. Every major rider journey covered.',
-        body: 'The following screens represent the redesigned BART app — built in BART\'s brand palette of deep navy, BART blue, and yellow with all five official line colors. Click through each screen to explore.',
+        body: 'The following screens represent the redesigned BART app - built in BART\'s brand palette of deep navy, BART blue, and yellow with all five official line colors. Click through each screen to explore.',
       },
       {
         type: 'outcomes',
         label: 'Conclusions',
         headline: 'Riders found what they needed in half the time.',
-        body: 'Usability testing with 10 participants on the redesigned prototype showed dramatic improvements across all core tasks. Finding live departures dropped from an average of 4 taps to 0. Locating elevator status for a specific station dropped from 6 taps to 1. Trip planning with an accessibility preference — previously impossible — now takes under 30 seconds.\n\nThe accessibility-first approach proved to be good design for everyone. The high-contrast dark mode, larger touch targets, and structured tab navigation were praised by all participant types — not just those with accessibility needs.',
+        body: 'Usability testing with 10 participants on the redesigned prototype showed dramatic improvements across all core tasks. Finding live departures dropped from an average of 4 taps to 0. Locating elevator status for a specific station dropped from 6 taps to 1. Trip planning with an accessibility preference - previously impossible - now takes under 30 seconds.\n\nThe accessibility-first approach proved to be good design for everyone. The high-contrast dark mode, larger touch targets, and structured tab navigation were praised by all participant types - not just those with accessibility needs.',
         stats: [
           { value: '0', label: 'Taps to see live departures from favorites' },
           { value: '78%', label: 'Faster at finding elevator status vs. current app' },
@@ -209,7 +198,7 @@ export const projects = [
   {
     slug: 'simmer',
     title: 'Simmer',
-    tagline: 'Find exactly what to cook tonight — whatever you have, however long you have',
+    tagline: 'Find exactly what to cook tonight - whatever you have, however long you have',
     category: 'UX / Product Design',
     year: '2025',
     color: '#E8834A',
@@ -226,7 +215,7 @@ export const projects = [
       accent: '#FF6B35', accentLight: '#FFF0E8', accentMuted: '#FFB08A',
       bg: 'var(--bg)', bgAlt: 'var(--bg-alt)', dark: '#1A1A1A', heroStyle: 'bold',
     },
-    description: 'Simmer is a recipe discovery app built around how people actually cook — not how cookbooks wish they did. You tell it what you have, how much time you have, who you are cooking for, and what you feel like eating. It finds the perfect recipe, walks you through it step by step, and builds your shopping list for next time.',
+    description: 'Simmer is a recipe discovery app built around how people actually cook - not how cookbooks wish they did. You tell it what you have, how much time you have, who you are cooking for, and what you feel like eating. It finds the perfect recipe, walks you through it step by step, and builds your shopping list for next time.',
     sections: [
       {
         type: 'problem',
@@ -274,9 +263,9 @@ export const projects = [
         type: 'research',
         label: 'Research and Competitive Analysis',
         headline: 'We followed 18 people through a full week of dinner decisions.',
-        body: 'Rather than just interviewing users, I ran a week-long diary study with 18 participants across different household types — singles, couples, families, people with dietary restrictions. They logged every meal decision: what they wanted to make, what got in the way, and what they actually ended up doing.',
+        body: 'Rather than just interviewing users, I ran a week-long diary study with 18 participants across different household types - singles, couples, families, people with dietary restrictions. They logged every meal decision: what they wanted to make, what got in the way, and what they actually ended up doing.',
         findings: [
-          { quote: '"I have Allrecipes, NYT Cooking, and Pinterest open at the same time and I still cannot decide."', theme: 'Decision fatigue is the real UX problem — too many choices' },
+          { quote: '"I have Allrecipes, NYT Cooking, and Pinterest open at the same time and I still cannot decide."', theme: 'Decision fatigue is the real UX problem - too many choices' },
           { quote: '"I always have to substitute half the ingredients anyway. I wish it just knew what I had."', theme: 'Pantry-first filtering is the most-wanted missing feature' },
           { quote: '"I started a recipe and it said marinate overnight. Who has time for that?"', theme: 'Time estimates are either missing or wildly inaccurate' },
           { quote: '"My partner is lactose intolerant and I am trying to eat less meat. Most apps make me filter separately every time."', theme: 'Household dietary profiles should be first-class, not an afterthought' },
@@ -294,19 +283,19 @@ export const projects = [
         label: 'Design Decisions',
         headline: 'Six decisions that turned a search box into a cooking companion.',
         decisions: [
-          { number: '01', title: 'Filters as the homepage, not an afterthought', body: 'In most recipe apps, filters are buried in a corner. In Simmer, filtering is the first thing you see. The home screen is a smart input — a set of tiles where you set your constraints before you see a single recipe. This makes results feel curated, not searched.' },
-          { number: '02', title: 'Pantry mode — your fridge is the filter', body: 'Simmer lets you build a persistent pantry profile of what you usually keep on hand. When you open the app, it already knows your staples. Results show what you can make right now, with a clear indicator of any missing ingredients and a one-tap add to your shopping list.' },
+          { number: '01', title: 'Filters as the homepage, not an afterthought', body: 'In most recipe apps, filters are buried in a corner. In Simmer, filtering is the first thing you see. The home screen is a smart input - a set of tiles where you set your constraints before you see a single recipe. This makes results feel curated, not searched.' },
+          { number: '02', title: 'Pantry mode - your fridge is the filter', body: 'Simmer lets you build a persistent pantry profile of what you usually keep on hand. When you open the app, it already knows your staples. Results show what you can make right now, with a clear indicator of any missing ingredients and a one-tap add to your shopping list.' },
           { number: '03', title: 'Honest time estimates with a hard limit', body: 'Recipe time estimates are notoriously dishonest. Simmer shows total real time, active time, and passive time separately. The time slider lets you set a hard limit: no recipe over 30 minutes. The app takes that seriously.' },
-          { number: '04', title: 'Cooking mode — the phone stays clean', body: 'Once you pick a recipe, the experience shifts entirely. Cooking mode strips away navigation and shows one step at a time in huge, readable type. The screen stays on. Timers are built in. Your phone becomes a cooking assistant, not a distraction.' },
+          { number: '04', title: 'Cooking mode - the phone stays clean', body: 'Once you pick a recipe, the experience shifts entirely. Cooking mode strips away navigation and shows one step at a time in huge, readable type. The screen stays on. Timers are built in. Your phone becomes a cooking assistant, not a distraction.' },
           { number: '05', title: 'The shopping list builds itself', body: 'When you save a recipe or start cooking mode, Simmer compares the ingredients against your pantry and auto-populates a shopping list with only what you are missing. Items are grouped by supermarket section and sync across devices.' },
-          { number: '06', title: 'Bold, food-first visual design', body: 'Food deserves better than a white card with tiny text. Simmer uses full-bleed emoji illustration, big expressive type, and a color system built around appetite — warm oranges, deep greens, rich creams. Every recipe card feels like a magazine cover.' },
+          { number: '06', title: 'Bold, food-first visual design', body: 'Food deserves better than a white card with tiny text. Simmer uses full-bleed emoji illustration, big expressive type, and a color system built around appetite - warm oranges, deep greens, rich creams. Every recipe card feels like a magazine cover.' },
         ],
       },
       {
         type: 'mockup',
         label: 'Hi-Fi Prototype',
         headline: 'Six screens. From empty fridge to finished plate.',
-        body: 'The following screens walk through the full Simmer journey — setting your filters, browsing results, reading a recipe, cooking step by step, and managing your shopping list.',
+        body: 'The following screens walk through the full Simmer journey - setting your filters, browsing results, reading a recipe, cooking step by step, and managing your shopping list.',
       },
       {
         type: 'iteration',
@@ -316,23 +305,23 @@ export const projects = [
           {
             round: 'Round 1',
             participants: 8,
-            keyFinding: 'The filter screen was too long — users had to scroll to find the Find Recipes button, and several never found the pantry option at all.',
+            keyFinding: 'The filter screen was too long - users had to scroll to find the Find Recipes button, and several never found the pantry option at all.',
             changes: [
               'Moved pantry shortcut to a prominent card above the fold',
               'Collapsed dietary filters into a scrollable chip row instead of a vertical list',
               'Pinned the Find Recipes button to the bottom of the screen so it is always visible',
-              'Added a time slider instead of discrete time options — felt more intuitive',
+              'Added a time slider instead of discrete time options - felt more intuitive',
             ],
           },
           {
             round: 'Round 2',
             participants: 10,
-            keyFinding: 'Cook mode tested extremely well, but users wanted to be able to see all steps at once if they preferred — not be forced into one-at-a-time.',
+            keyFinding: 'Cook mode tested extremely well, but users wanted to be able to see all steps at once if they preferred - not be forced into one-at-a-time.',
             changes: [
               'Added a "View all steps" toggle in cook mode',
               'Increased font size of step instructions after multiple participants zoomed in',
               'Added a "tip" pattern for steps where technique matters (e.g. "the oil is ready when it shimmers")',
-              'Shopping list now shows which recipe each item is for — previously this context was missing',
+              'Shopping list now shows which recipe each item is for - previously this context was missing',
             ],
           },
         ],
@@ -341,7 +330,7 @@ export const projects = [
         type: 'outcomes',
         label: 'Conclusions',
         headline: 'People stopped Googling recipes mid-session.',
-        body: 'In usability testing with 14 participants, the pantry filter was unanimously the standout feature. Eleven out of fourteen said they had never seen it done well before. The cooking mode reduced mid-recipe phone distraction by eliminating the need to scroll — participants completed recipes without leaving the app for the first time.\n\nThe two-round iteration process was worth it. The changes from Round 1 alone reduced task completion time on the filter screen by 40%. The tip pattern introduced in Round 2 was called out by four participants as something that made them feel more confident as cooks.',
+        body: 'In usability testing with 14 participants, the pantry filter was unanimously the standout feature. Eleven out of fourteen said they had never seen it done well before. The cooking mode reduced mid-recipe phone distraction by eliminating the need to scroll - participants completed recipes without leaving the app for the first time.\n\nThe two-round iteration process was worth it. The changes from Round 1 alone reduced task completion time on the filter screen by 40%. The tip pattern introduced in Round 2 was called out by four participants as something that made them feel more confident as cooks.',
         stats: [
           { value: '11/14', label: 'Said pantry filter was unlike anything they had seen' },
           { value: '40%', label: 'Faster filter completion after Round 1 changes' },
@@ -350,6 +339,25 @@ export const projects = [
         ],
       },
     ],
+    images: [],
+  },
+
+  {
+    slug: 'velours',
+    title: 'VELOURS',
+    tagline: 'A luxury rebrand of the one product every human uses every day - and nobody has ever designed for',
+    category: 'Brand · Packaging · Copywriting',
+    year: '2024',
+    color: '#3D4F3B',
+    tags: ['Packaging Design', 'Brand Identity', 'Copywriting', 'Print'],
+    cardVisual: null,
+    richCaseStudy: false,
+    theme: {
+      accent: '#3D4F3B', accentLight: '#C8D4C6', accentMuted: '#7a8c78',
+      bg: '#FAF7F2', bgAlt: '#F0EBE0', dark: '#3D4F3B', heroStyle: 'warm',
+    },
+    externalPage: '/velours',
+    description: 'The global toilet paper market is worth $82 billion. Nobody has tried to make it beautiful. VELOURS by Atelier Laurent is a full brand, packaging system, and copy suite for a product that spends its whole life in a room no one ever sees.',
     images: [],
   },
 ]

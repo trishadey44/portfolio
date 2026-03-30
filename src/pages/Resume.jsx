@@ -13,7 +13,7 @@ const data = {
       role: 'Climbing Programs Manager',
       org: 'UC Berkeley',
       location: 'Berkeley',
-      period: 'Feb 2024 — Present',
+      period: 'Feb 2024 - Present',
       bullets: [
         'Led and trained student staff at the UC Berkeley climbing wall, emphasizing safety, inclusivity, and reducing barriers for new climbers.',
         'Developed accessibility programs with user-centered design to provide students and underrepresented communities opportunities to engage with climbing, fostering an inclusive environment through partnerships.',
@@ -24,7 +24,7 @@ const data = {
       role: 'UX Design Program Course',
       org: 'CareerFoundry',
       location: 'Online',
-      period: 'Jun 2023 — Dec 2023',
+      period: 'Jun 2023 - Dec 2023',
       bullets: [
         'Designed several health app prototypes focusing on intuitive tracking and user guidance.',
         'Conducted user research and applied responsive design principles using Figma, Sketch, and Adobe Creative Suite, producing an end-to-end UX experience.',
@@ -34,7 +34,7 @@ const data = {
       role: 'Senior Front End Software Developer',
       org: 'Salesforce',
       location: 'San Francisco',
-      period: 'Jun 2016 — Mar 2023',
+      period: 'Jun 2016 - Mar 2023',
       bullets: [
         'Worked on building out Salesforce Essentials, Salesforce\'s only solution directed towards small to medium-sized businesses.',
         'Designed user interfaces that supported complex CRM workflows while ensuring usability for small-business owners using Javascript and Figma.',
@@ -47,10 +47,10 @@ const data = {
       role: 'CAFA Mentor Program',
       org: 'FLY',
       location: 'Oakland',
-      period: 'Aug 2021 — Present',
+      period: 'Aug 2021 - Present',
       bullets: [
         'Mentored and served as a court-appointed advocate, attending proceedings and submitting strength-based reports, contributing to positive outcomes and reduced recidivism.',
-        'Applied empathy and communication to better understand unique needs — principles I bring to user research and inclusive design.',
+        'Applied empathy and communication to better understand unique needs - principles I bring to user research and inclusive design.',
       ],
     },
   ],
@@ -59,7 +59,7 @@ const data = {
       degree: 'Bachelor of Science',
       org: 'Cornell University',
       location: 'Ithaca',
-      period: 'Aug 2012 — May 2016',
+      period: 'Aug 2012 - May 2016',
       bullets: [
         'Major: Electrical and Computer Engineering (ECE)',
         'Minor: Dyson Business Minor for Engineering Students',

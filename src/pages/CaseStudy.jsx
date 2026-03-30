@@ -72,7 +72,7 @@ function ResearchSection({ section, slug }) {
             <div className={`${styles.compRow} ${styles.highlightRow}`}>
               <span className={styles.compName}>{appRow.name}</span>
               <span className={styles.compCell}>{appRow.str}</span>
-              <span className={styles.compCell}>—</span>
+              <span className={styles.compCell}>-</span>
               <span className={styles.compCell}>Everyone</span>
             </div>
           </div>
@@ -83,7 +83,7 @@ function ResearchSection({ section, slug }) {
   )
 }
 
-// ── Research quotes only (Hearth — no comp table) ─────────────
+// ── Research quotes only (Hearth - no comp table) ─────────────
 function ResearchQuotesSection({ section }) {
   return (
     <section className={`${styles.richBlock} reveal`}>
@@ -349,6 +349,7 @@ export default function CaseStudy() {
 
   const currentIndex = projects.findIndex(p => p.slug === slug)
   const next = projects[(currentIndex + 1) % projects.length]
+  const prev = projects[(currentIndex - 1 + projects.length) % projects.length]
   const t = project.theme || {}
   const isDark = t.heroStyle === 'dark'
   const isBold = t.heroStyle === 'bold'
@@ -405,15 +406,24 @@ export default function CaseStudy() {
         })}
       </div>
 
-      {/* ── Next project ─────────────────────────────────── */}
+      {/* ── Prev / Next ──────────────────────────────────── */}
       <section className={styles.nextSection}>
         <div className="container">
-          <div className={`${styles.nextInner} reveal`}>
-            <span className="label">Next Project</span>
-            <Link to={`/case-study/${next.slug}`} className={styles.nextLink} data-hover>
-              <h2 className={styles.nextTitle}>{next.title}</h2>
-              <span className={styles.nextArrow}>→</span>
-            </Link>
+          <div className={`${styles.prevNextRow} reveal`}>
+            <div className={styles.prevNextItem}>
+              <span className="label">Previous Project</span>
+              <Link to={`/case-study/${prev.slug}`} className={styles.nextLink} data-hover>
+                <span className={styles.prevArrow}>←</span>
+                <h2 className={styles.nextTitle}>{prev.title}</h2>
+              </Link>
+            </div>
+            <div className={`${styles.prevNextItem} ${styles.prevNextRight}`}>
+              <span className="label">Next Project</span>
+              <Link to={`/case-study/${next.slug}`} className={styles.nextLink} data-hover>
+                <h2 className={styles.nextTitle}>{next.title}</h2>
+                <span className={styles.nextArrow}>→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -35,13 +35,22 @@
   gap: 14px;
 }
 
-/* Default — square (1×1) */
+/* Default - square (1×1) */
 .mosaicItem { }
 
-/* Wide items span 2 columns */
-.item0 { grid-column: span 2; }
-.item3 { grid-column: span 1; grid-row: span 2; }
-.item4 { grid-column: span 2; }
+/* Layout:
+   Row 1: Component Library (1col tall) | Wordmark (2col) | Icon set (1col)
+   Row 2: Component Library (cont)      | Micro-interaction (1col) | Color palette (2col)
+   Row 3: Rock climbing (2col) | Dashboard (2col)
+   Row 4: Coffee steps (4col) */
+.item0 { grid-column: span 1; grid-row: span 2; }  /* Component Library - tall */
+.item1 { grid-column: span 2; }                     /* Wordmark - wide */
+.item2 { grid-column: span 1; }                     /* Icon set - square */
+.item3 { grid-column: span 1; }                     /* Micro-interaction - square */
+.item4 { grid-column: span 2; }                     /* Color palette - wide */
+.item5 { grid-column: span 2; }                     /* Rock climbing - wide */
+.item6 { grid-column: span 2; }                     /* Dashboard - wide */
+.item7 { grid-column: span 4; }                     /* Coffee steps - full width */
 
 /* ── Card ────────────────────────────────────────────────── */
 .cardAnchor {
@@ -96,7 +105,7 @@
   opacity: 0.3;
 }
 
-/* Info overlay — slides up on hover */
+/* Info overlay - slides up on hover */
 .cardInfo {
   position: absolute;
   inset: 0;
@@ -177,30 +186,6 @@
   opacity: 1;
 }
 
-/* ── View all CTA ────────────────────────────────────────── */
-.viewAllWrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.viewAllBtn {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  color: var(--text);
-  text-decoration: none;
-  border: 1.5px solid var(--text);
-  padding: 12px 28px;
-  border-radius: 999px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.viewAllBtn:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 900px) {
   .mosaic {
@@ -208,11 +193,12 @@
     grid-auto-rows: 200px;
   }
   /* Reset all specific spans, let them flow naturally */
-  .item0, .item1, .item2, .item3, .item4, .item5 {
+  .item0, .item1, .item2, .item3, .item4, .item5, .item6, .item7 {
     grid-column: span 1;
     grid-row: span 1;
   }
-  .item0, .item4 { grid-column: span 2; }
+  .item1, .item4, .item5, .item6 { grid-column: span 2; }
+  .item7 { grid-column: span 2; }
 }
 
 @media (max-width: 560px) {
@@ -222,3 +208,83 @@
   }
   .item0, .item4 { grid-column: span 1; }
 }
+
+/* ── Header row with See All button ─────────────────────── */
+.headerTop {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.seeAllBtn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border: 1.5px solid var(--text);
+  border-radius: 100px;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 4px;
+}
+
+.seeAllBtn:hover { background: var(--text); color: var(--bg); }
+
+/* ── Preview mosaic - 3 cards, simpler layout ───────────── */
+.mosaicPreview {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+}
+
+/* Component Library tall | Wordmark + Icon set side by side */
+.preview0 { grid-column: span 1; grid-row: span 2; }
+.preview1 { grid-column: span 3; }
+.preview2 { grid-column: span 3; }
+
+/* View all row */
+.viewAllRow {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 0;
+}
+
+.viewAllLink {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.viewAllLink:hover { opacity: 0.65; }
+
+@media (max-width: 768px) {
+  .mosaicPreview {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+  }
+  .preview0 { grid-column: span 2; }
+  .preview1, .preview2 { grid-column: span 1; }
+  .headerTop { flex-direction: column; align-items: flex-start; }
+}
+
+/* Animated card fill */
+.cardAnimated {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+/* SVG splash fill */
+.cardSplash { width: 100%; height: 100%; display: flex; align-items: stretch; }
+.cardSplash svg { width: 100%; height: 100%; display: block; }

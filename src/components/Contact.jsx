@@ -22,7 +22,7 @@ export default function Contact() {
     setStatus('sending')
 
     if (!CONFIGURED) {
-      // Key not yet set — show setup instructions instead of silently failing
+      // Key not yet set - show setup instructions instead of silently failing
       setStatus('setup')
       return
     }

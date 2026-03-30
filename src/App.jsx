@@ -10,6 +10,12 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CaseStudy from './pages/CaseStudy'
 import Resume from './pages/Resume'
+import PlaygroundPage from './pages/PlaygroundPage'
+import ComponentLibrary from './pages/ComponentLibrary'
+import CocktailMaker from './pages/CocktailMaker'
+import VeloursProject from './pages/VeloursProject'
+import AllProjects from './pages/AllProjects'
+import WobblePage from './pages/WobblePage'
 
 // ─── Cursor ──────────────────────────────────────────────
 function Cursor() {
@@ -67,7 +73,7 @@ function Home() {
     <>
       <Hero />
       <Projects />
-      <Playground preview />
+      <Playground />
       <About />
       <Skills />
       <Contact />
@@ -113,9 +119,14 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/playground" element={<><Playground /><Footer /></>} />
         <Route path="/case-study/:slug" element={<CaseStudy />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/playground" element={<PlaygroundPage />} />
+        <Route path="/components" element={<ComponentLibrary />} />
+        <Route path="/cocktail-maker" element={<CocktailMaker />} />
+        <Route path="/velours" element={<VeloursProject />} />
+        <Route path="/all-projects" element={<AllProjects />} />
+        <Route path="/wobble" element={<WobblePage />} />
       </Routes>
     </>
   )

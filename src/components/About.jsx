@@ -16,7 +16,7 @@ export default function About() {
               I'm <strong>Trisha</strong>, a designer, developer, and firm believer that good design should feel invisible. I work across UX research, visual design, and front-end engineering, which basically means I can take an idea from a messy napkin sketch to a product people actually enjoy using.
             </p>
             <p className={styles.body}>
-              I spent time at Salesforce shipping features used by millions, but what really drives me is the small stuff: the interaction that feels just right, the copy that makes you smile, the detail nobody notices but everybody feels. When I'm not manipulating pixels, I'm climbing rocks, running trails, or volunteering — all different ways of solving problems with my whole self.
+              I spent time at Salesforce shipping features used by millions, but what really drives me is the small stuff: the interaction that feels just right, the copy that makes you smile, the detail nobody notices but everybody feels. When I'm not manipulating pixels, I'm climbing rocks, running trails, or volunteering - all different ways of solving problems with my whole self.
             </p>
 
             <div className={styles.facts}>

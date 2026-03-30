@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#C8874A"/>
+
+  <!-- Step 1: Complete (checkmark circle) -->
+  <circle cx="120" cy="150" r="34" fill="#3D2713"/>
+  <path d="M106 150 L117 161 L134 138" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Dash 1→2 -->
+  <rect x="162" y="148" width="38" height="4" rx="2" fill="rgba(230,205,160,0.55)"/>
+
+  <!-- Step 2: Complete (checkmark circle) -->
+  <circle cx="240" cy="150" r="34" fill="#3D2713"/>
+  <path d="M226 150 L237 161 L254 138" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Dash 2→3 -->
+  <rect x="282" y="148" width="38" height="4" rx="2" fill="rgba(230,205,160,0.55)"/>
+
+  <!-- Step 3: ACTIVE - coffee bag (slightly larger, brighter) -->
+  <!-- Dripper above -->
+  <g transform="translate(332, 68)">
+    <path d="M-16 0 L0 26 L16 0 Z" stroke="rgba(245,225,185,0.9)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+    <line x1="-8" y1="8" x2="-4" y2="16" stroke="rgba(245,225,185,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-2" y1="6" x2="0" y2="16" stroke="rgba(245,225,185,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="4"  y1="8" x2="6"  y2="16" stroke="rgba(245,225,185,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Coffee bag -->
+  <g transform="translate(360, 150)">
+    <path d="M-24 -34 Q-24 -42 -18 -42 L18 -42 Q24 -42 24 -34 L24 30 Q24 32 22 32 L-22 32 Q-24 32 -24 30 Z" stroke="rgba(245,225,185,1)" stroke-width="2.8" stroke-linejoin="round" fill="none"/>
+    <path d="M-24 -34 Q0 -28 24 -34" stroke="rgba(245,225,185,0.8)" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="-8" cy="6" rx="7" ry="9" stroke="rgba(245,225,185,1)" stroke-width="2.2" fill="none"/>
+    <line x1="-8" y1="-3" x2="-8" y2="15" stroke="rgba(245,225,185,0.9)" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="8" cy="10" rx="7" ry="9" stroke="rgba(245,225,185,1)" stroke-width="2.2" fill="none"/>
+    <line x1="8" y1="1" x2="8" y2="19" stroke="rgba(245,225,185,0.9)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Dash 3→4 -->
+  <rect x="398" y="148" width="38" height="4" rx="2" fill="rgba(230,205,160,0.55)"/>
+
+  <!-- Step 4: Pending - teapot -->
+  <g transform="translate(480, 150)">
+    <!-- Steam -->
+    <path d="M-8 -44 Q-10 -47 -8 -50" stroke="rgba(230,205,160,0.65)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M-2 -44 Q-4 -48 -2 -51" stroke="rgba(230,205,160,0.65)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Lid -->
+    <path d="M-12 -34 Q0 -40 12 -34" stroke="rgba(230,205,160,0.75)" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="0" cy="-37" r="3.5" stroke="rgba(230,205,160,0.75)" stroke-width="2" fill="none"/>
+    <!-- Body -->
+    <path d="M-26 -30 Q-26 14 0 14 Q26 14 26 -4 Q26 -30 -26 -30 Z" stroke="rgba(230,205,160,0.75)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+    <!-- Spout -->
+    <path d="M26 -10 Q36 -12 34 -4" stroke="rgba(230,205,160,0.75)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Handle -->
+    <path d="M-26 -16 Q-36 -16 -36 -6 Q-36 4 -26 4" stroke="rgba(230,205,160,0.75)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Dash 4→5 -->
+  <rect x="518" y="148" width="38" height="4" rx="2" fill="rgba(230,205,160,0.55)"/>
+
+  <!-- Step 5: Pending - milk pitcher + sugar cubes -->
+  <g transform="translate(600, 150)">
+    <!-- Pitcher -->
+    <path d="M-16 -34 L-14 22 Q-14 24 -12 24 L12 24 Q14 24 14 22 L16 -34 Z" stroke="rgba(230,205,160,0.75)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+    <path d="M-16 -34 Q-6 -42 4 -34" stroke="rgba(230,205,160,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M16 -26 Q26 -26 26 -18 Q26 -10 16 -10" stroke="rgba(230,205,160,0.75)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Sugar cubes -->
+    <rect x="-30" y="20" width="12" height="12" rx="2" stroke="rgba(230,205,160,0.75)" stroke-width="2" fill="none"/>
+    <line x1="-30" y1="26" x2="-18" y2="26" stroke="rgba(230,205,160,0.5)" stroke-width="1"/>
+    <line x1="-24" y1="20" x2="-24" y2="32" stroke="rgba(230,205,160,0.5)" stroke-width="1"/>
+    <rect x="-21" y="24" width="11" height="11" rx="2" stroke="rgba(230,205,160,0.75)" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Label -->
+  <text x="400" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic" fill="rgba(230,205,160,0.7)" letter-spacing="1">coffee steps — micro-interaction study</text>
+</svg>
