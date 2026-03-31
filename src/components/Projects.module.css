@@ -133,15 +133,16 @@
   .grid { grid-template-columns: 1fr; }
 }
 
-/* ── Slider (>3 projects) ─────────────────────────────── */
+/* ── Slider ───────────────────────────────────────────── */
 .sliderWrap {
   position: relative;
   padding-bottom: 20px;
 }
 
-/* Clip container so cards slide cleanly without overflowing */
+/* Clip ALWAYS — prevents cards from leaking beyond wrapper */
 .sliderClip {
   overflow: hidden;
+  width: 100%;
 }
 
 .sliderTrack {
@@ -150,39 +151,21 @@
   padding: 8px 40px 16px;
   list-style: none;
   user-select: none;
-  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
+  /* No overflow-x: auto — clipping is handled by sliderClip */
 }
 
-/* Slide out to the left (going right / next) */
-.slideOutLeft {
-  animation: slideOutLeft 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Slide out to the right (going left / prev) */
-.slideOutRight {
-  animation: slideOutRight 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes slideOutLeft {
-  from { transform: translateX(0); opacity: 1; }
-  to   { transform: translateX(-60px); opacity: 0; }
-}
-
-@keyframes slideOutRight {
-  from { transform: translateX(0); opacity: 1; }
-  to   { transform: translateX(60px); opacity: 0; }
-}
-
+/* Default: 3 cards */
 .sliderCard {
   flex: 0 0 calc(33.333% - 18px);
-  min-width: 280px;
+  min-width: 0; /* Prevent flex children from overflowing */
 }
 
-.scrollBtnDisabled {
-  opacity: 0.25;
-  cursor: default;
-  pointer-events: none;
-}
+/* Slide animations */
+.slideOutLeft  { animation: slideOutLeft  0.32s cubic-bezier(0.4,0,0.2,1) forwards; }
+.slideOutRight { animation: slideOutRight 0.32s cubic-bezier(0.4,0,0.2,1) forwards; }
+
+@keyframes slideOutLeft  { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-60px); opacity: 0; } }
+@keyframes slideOutRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(60px);  opacity: 0; } }
 
 .sliderCard a {
   display: block;
@@ -198,6 +181,7 @@
   box-shadow: 0 24px 60px rgba(0,0,0,0.08);
 }
 
+/* Desktop scroll buttons */
 .scrollBtn {
   position: absolute;
   top: 50%;
@@ -214,13 +198,17 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
-.scrollBtn:hover:not(:disabled) { box-shadow: 0 6px 24px rgba(0,0,0,0.15); transform: translateY(calc(-50% - 2px)); }
+.scrollBtn:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.15); transform: translateY(calc(-50% - 2px)); }
 .scrollBtnLeft  { left: 12px; }
 .scrollBtnRight { right: 12px; }
 
-/* ── Mobile: 1 card, arrows + dots below ─────────────── */
+/* Desktop-only: hide mobile controls */
+.desktopOnly { display: flex; }
+.mobileArrows { display: none; }
+
+/* ── Mobile ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .sliderWrap {
     padding-bottom: 0;
@@ -229,37 +217,33 @@
     gap: 16px;
   }
 
-  .sliderClip {
-    width: 100%;
+  /* 1 card on mobile */
+  .sliderCard {
+    flex: 0 0 100%;
   }
 
   .sliderTrack {
-    padding: 8px 20px 8px;
+    padding: 8px 16px;
     gap: 0;
   }
 
-  .sliderCard {
-    flex: 0 0 100%;
-    min-width: 0;
-    width: 100%;
+  /* Hide desktop arrows */
+  .desktopOnly { display: none !important; }
+
+  /* Show mobile arrow row */
+  .mobileArrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 16px 8px;
   }
 
-  .header {
-    margin-bottom: 32px;
-  }
-}
-
-.mobileArrows {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 0 20px 8px;
+  .header { margin-bottom: 32px; }
 }
 
 .mobileArrowBtn {
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--white);
   border: 1px solid var(--border);
@@ -280,8 +264,7 @@
 }
 
 .mobileDot {
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--border);
   transition: background 0.2s, transform 0.2s;

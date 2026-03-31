@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import { HearthSplash, BARTSplash, SimmerSplash, ComponentLibrarySplash } from './CardSplash'
@@ -16,15 +16,7 @@ export default function Projects() {
   const [index, setIndex] = useState(0)
   const [animDir, setAnimDir] = useState(null)
   const [animating, setAnimating] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
   const total = projects.length
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
-  }, [])
 
   const go = (dir) => {
     if (animating) return
@@ -37,8 +29,8 @@ export default function Projects() {
     }, 320)
   }
 
-  const count = isMobile ? 1 : 3
-  const visible = Array.from({ length: count }, (_, offset) => projects[(index + offset) % total])
+  // Always render 3 cards — CSS handles showing 1 on mobile
+  const visible = [0, 1, 2].map(offset => projects[(index + offset) % total])
 
   return (
     <section className={`${styles.section} section`} id="projects">
@@ -53,9 +45,8 @@ export default function Projects() {
       </div>
 
       <div className={styles.sliderWrap}>
-        {!isMobile && (
-          <button className={`${styles.scrollBtn} ${styles.scrollBtnLeft}`} onClick={() => go('left')} aria-label="Previous">‹</button>
-        )}
+        {/* Desktop arrows — hidden on mobile via CSS */}
+        <button className={`${styles.scrollBtn} ${styles.scrollBtnLeft} ${styles.desktopOnly}`} onClick={() => go('left')} aria-label="Previous">‹</button>
 
         <div className={styles.sliderClip}>
           <ul className={`${styles.sliderTrack} ${animating ? (animDir === 'right' ? styles.slideOutLeft : styles.slideOutRight) : ''}`}>
@@ -67,21 +58,18 @@ export default function Projects() {
           </ul>
         </div>
 
-        {!isMobile && (
-          <button className={`${styles.scrollBtn} ${styles.scrollBtnRight}`} onClick={() => go('right')} aria-label="Next">›</button>
-        )}
+        <button className={`${styles.scrollBtn} ${styles.scrollBtnRight} ${styles.desktopOnly}`} onClick={() => go('right')} aria-label="Next">›</button>
 
-        {isMobile && (
-          <div className={styles.mobileArrows}>
-            <button className={styles.mobileArrowBtn} onClick={() => go('left')} aria-label="Previous">‹</button>
-            <span className={styles.mobileDots}>
-              {projects.map((_, i) => (
-                <span key={i} className={`${styles.mobileDot} ${i === index ? styles.mobileDotActive : ''}`} />
-              ))}
-            </span>
-            <button className={styles.mobileArrowBtn} onClick={() => go('right')} aria-label="Next">›</button>
-          </div>
-        )}
+        {/* Mobile arrows + dots — shown only on mobile via CSS */}
+        <div className={styles.mobileArrows}>
+          <button className={styles.mobileArrowBtn} onClick={() => go('left')} aria-label="Previous">‹</button>
+          <span className={styles.mobileDots}>
+            {projects.map((_, i) => (
+              <span key={i} className={`${styles.mobileDot} ${i === index ? styles.mobileDotActive : ''}`} />
+            ))}
+          </span>
+          <button className={styles.mobileArrowBtn} onClick={() => go('right')} aria-label="Next">›</button>
+        </div>
       </div>
     </section>
   )
