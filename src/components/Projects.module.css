@@ -143,6 +143,7 @@
 .sliderClip {
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
 }
 
 .sliderTrack {
@@ -151,7 +152,8 @@
   padding: 8px 40px 16px;
   list-style: none;
   user-select: none;
-  /* No overflow-x: auto — clipping is handled by sliderClip */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Default: 3 cards */
@@ -217,14 +219,25 @@
     gap: 16px;
   }
 
-  /* 1 card on mobile */
-  .sliderCard {
+  /* CRITICAL: hide 2nd and 3rd cards so they don't expand document width */
+  .sliderCard:nth-child(2),
+  .sliderCard:nth-child(3) {
+    display: none;
+  }
+
+  /* Single visible card takes full width */
+  .sliderCard:nth-child(1) {
     flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .sliderTrack {
     padding: 8px 16px;
     gap: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Hide desktop arrows */
