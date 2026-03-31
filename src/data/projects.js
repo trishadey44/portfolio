@@ -28,17 +28,20 @@ export const projects = [
         body: 'Most people manage their lives across too many apps. Notion for work, a fitness tracker for health, a notes app for ideas, a calendar for dates, a group chat for home stuff, and a reminders app for the rest. Each one works fine on its own, but none of them share information or talk to each other. The result is a chaotic number of clicks and swipes just to complete your day.\n\nNot only does Hearth help you to complete tasks, but it helps you understand how each of your goals can connect to another. Coherence brought to everyday living!',
       },
       {
-        type: 'research-quotes',
+        type: 'research-visual',
         label: 'Research',
-        headline: 'I interviewed 16 people with diverse backgrounds to understand how they organize their lives.',
-        intro: 'I spoke with 16 people across different life stages: a freelancer, a new parent, a student, a marketing manager, a nurse, a small business owner. Every single one had tried to get organized before. Every single one had quit. I wanted to understand not just what they needed now, but why the last thing they tried had stopped working.',
-        findings: [
-          { quote: '"I have a Notion setup I spent a weekend building. I stopped using it after two weeks."', theme: 'Setup cost kills habits before they form' },
-          { quote: '"My work tasks and personal goals live in completely different places. They affect each other but I can never see them together."', theme: 'Life areas are split across tools that never connect' },
-          { quote: '"I know what I need to do. I just do not know how to start or break it down."', theme: 'Knowing a goal is not the same as having a plan' },
-          { quote: '"I want a tool that feels like mine, not like a corporate project manager."', theme: 'Emotional ownership is what keeps people coming back' },
+        headline: 'I interviewed people to understand how they organize their lives.',
+        stats: [
+          { value: '6+', label: 'apps used to manage life', desc: 'Daily life already starts scattered across too many places.' },
+          { value: '56%', label: 'still use paper', desc: 'Because apps do not fully cover what people need.' },
+          { value: '9 in 16', label: 'quit productivity systems', desc: 'The patchwork becomes too much to maintain.' },
+          { value: '42%', label: 'of daily tasks go undone', desc: 'Important things still slip through the cracks.' },
         ],
-        insight: '',
+        findings: [
+          { quote: 'I have to open like 5 different apps just to figure out how to start my day.', theme: 'Life areas are split across tools that never connect.' },
+          { quote: 'I have a Notion setup I spent a weekend building. I stopped using it after two weeks.', theme: 'Setup cost kills habits before they form.' },
+          { quote: 'I know what I need to do. I just do not know how to start or break it down.', theme: 'Knowing a goal is not the same as having a plan.' },
+        ],
       },
       {
         type: 'decisions-list',
@@ -61,7 +64,7 @@ export const projects = [
       {
         type: 'mockup-mobile',
         label: 'Mobile',
-        headline: 'Built to use on the go too.',
+        headline: 'Built to use on the go.',
         body: 'Hearth works on mobile without losing any of the depth. The layout reflows into a single-column view built for thumb navigation. Life View, card detail, and AI suggestions all adapt to a smaller screen.',
       },
       {
@@ -94,13 +97,13 @@ export const projects = [
       accent: '#0099CD', accentLight: '#E6F6FC', accentMuted: '#7FCCE6',
       bg: '#0D1B2A', bgAlt: '#152032', dark: '#FFD520', heroStyle: 'dark',
     },
-    description: 'A ground-up redesign of the BART mobile app - focused on making real-time transit information feel fast, clear, and accessible to every type of rider in the Bay Area. From the daily commuter to the first-time tourist to the rider who depends on elevator status to board at all.',
+    description: 'A ground-up redesign of the BART mobile app focused on making real-time transit information feel fast, clear, and accessible to every type of rider in the Bay Area. From the daily commuter to the first-time tourist to the rider who depends on elevators, this app is for everyone.',
     sections: [
       {
         type: 'problem',
         label: 'Problem Definition',
-        headline: 'The current BART app works. It just does not work well.',
-        body: 'BART is the backbone of Bay Area transit - serving over 130,000 daily riders across 50 stations. But its app is stuck in the past. Navigation is confusing, real-time information is buried, accessibility features are an afterthought, and the visual design has not kept pace with how people actually use their phones on a commute.\n\nThe problems compound for specific user groups. Tourists do not know the line system and have no way to orient themselves. Riders who depend on elevators must hunt through multiple screens to find out if one is working - information that determines whether they can board at all. And commuters who use the app daily have learned to work around its limitations rather than with them.',
+        headline: "The current BART app works, it just doesn't work well.",
+        body: 'BART is the backbone of Bay Area transit, serving over 130,000 daily riders across 50 stations. But its app is stuck in the past. Navigation is confusing, real-time information is buried, accessibility features are an afterthought, and the visual design has not kept up with how people actually use their phones on a commute.\n\nThe problems compound for specific user groups. Tourists do not know the line system and have no way to orient themselves. Riders who depend on elevators must hunt through multiple screens to find out if one is working. And commuters who use the app daily have learned to work around its limitations rather than with them.',
         stats: [
           { value: '130k+', label: 'Daily BART riders served' },
           { value: '2.1★', label: 'App Store rating before redesign' },
@@ -114,25 +117,25 @@ export const projects = [
         pairs: [
           {
             label: 'Home Screen',
-            before: 'Hero image with no live data, buried service alerts, no way to see next train without multiple taps.',
-            after: 'Live departures from saved stations surface immediately. Service alerts are visible but not intrusive. The map is accessible in one tap.',
+            before: 'Current BART app: Hero image with no live data, buried service alerts, no way to see next train without multiple taps.',
+            after: 'Redesign: Live departures from saved stations surface immediately. Service alerts are visible but not intrusive. The map is one tap away.',
           },
           {
             label: 'Station Detail',
-            before: 'One long scroll mixing departures, amenities, parking, elevator status, and maps. Critical info like elevator status buried below the fold.',
-            after: 'Four focused tabs: Overview, Schedules, Elevators, Map. Elevator status shown in the header of every station page - always visible, never buried.',
+            before: 'Current BART app: One long scroll mixing departures, amenities, parking, elevator status, and maps. Elevator status buried below the fold.',
+            after: 'Redesign: Four focused tabs - Overview, Schedules, Elevators, Map. Elevator status shown in the header of every station page, always visible.',
           },
           {
             label: 'Trip Planning',
-            before: 'Basic from/to fields with no preferences, no accessibility options, and trip results that show only time and cost.',
-            after: 'Four preference modes including Avoid Stairs, built specifically for riders with mobility needs. Results show transfer details, accessibility notes, and fare breakdown.',
+            before: 'Current BART app: Basic from/to fields with no preferences, no accessibility options, and trip results that show only time and cost.',
+            after: 'Redesign: Four preference modes including Avoid Stairs, built for riders with mobility needs. Results show transfer details, accessibility notes, and fare breakdown.',
           },
         ],
       },
       {
         type: 'research',
         label: 'Research and Competitive Analysis',
-        headline: 'We interviewed 13 BART riders across 3 very different rider types.',
+        headline: 'I interviewed BART riders across the 3 rider types.',
         body: 'I conducted 13 user interviews and 2 rounds of usability testing on the existing BART app, recruiting across three segments: daily commuters, occasional tourists and visitors, and riders with accessibility needs. I also ran a competitive analysis across 4 transit apps to benchmark against best-in-class patterns.',
         findings: [
           { quote: '"I just want to know if my train is on time and which platform. Why does it take 4 taps to find that?"', theme: 'Commuters want live departures front and center' },

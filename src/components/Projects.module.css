@@ -139,12 +139,38 @@
   padding-bottom: 20px;
 }
 
+/* Clip container so cards slide cleanly without overflowing */
+.sliderClip {
+  overflow: hidden;
+}
+
 .sliderTrack {
   display: flex;
   gap: 24px;
   padding: 8px 40px 16px;
   list-style: none;
   user-select: none;
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
+}
+
+/* Slide out to the left (going right / next) */
+.slideOutLeft {
+  animation: slideOutLeft 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Slide out to the right (going left / prev) */
+.slideOutRight {
+  animation: slideOutRight 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(-60px); opacity: 0; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(60px); opacity: 0; }
 }
 
 .sliderCard {
@@ -193,6 +219,78 @@
 .scrollBtn:hover:not(:disabled) { box-shadow: 0 6px 24px rgba(0,0,0,0.15); transform: translateY(calc(-50% - 2px)); }
 .scrollBtnLeft  { left: 12px; }
 .scrollBtnRight { right: 12px; }
+
+/* ── Mobile: 1 card, arrows + dots below ─────────────── */
+@media (max-width: 768px) {
+  .sliderWrap {
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sliderClip {
+    width: 100%;
+  }
+
+  .sliderTrack {
+    padding: 8px 20px 8px;
+    gap: 0;
+  }
+
+  .sliderCard {
+    flex: 0 0 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+}
+
+.mobileArrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px 8px;
+}
+
+.mobileArrowBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.mobileDots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.mobileDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.mobileDotActive {
+  background: var(--text);
+  transform: scale(1.3);
+}
 .cardVisual {
   display: flex;
   flex-direction: column;

@@ -33,6 +33,43 @@ function ProblemSection({ section }) {
   )
 }
 
+// ── Research Visual — stats rail + quote cards (Hearth) ───────
+function ResearchVisualSection({ section }) {
+  return (
+    <section className={`${styles.richBlock} ${styles.researchVisual} reveal`}>
+      <span className="label">{section.label}</span>
+      <h2 className={styles.richHeadline}>{section.headline}</h2>
+
+      {section.stats && (
+        <div className={styles.researchStatsRail}>
+          <div className={styles.researchStatsLine} />
+          <div className={styles.researchStatsGrid}>
+            {section.stats.map((s, i) => (
+              <div key={i} className={styles.researchStatItem}>
+                <div className={styles.researchStatDot} />
+              <div className={`${styles.researchStatNumber} ${s.value.length > 4 ? styles.researchStatNumberSm : ''}`}>{s.value}</div>
+                <div className={styles.researchStatLabel}>{s.label}</div>
+                <div className={styles.researchStatDesc}>{s.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {section.findings && (
+        <div className={styles.researchQuotesGrid}>
+          {section.findings.map((f, i) => (
+            <div key={i} className={styles.researchQuoteCard}>
+              <p className={styles.researchQuoteText}>"{f.quote}"</p>
+              <div className={styles.researchQuoteTheme}>{f.theme}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
 // ── Research with comp table ──────────────────────────────────
 function ResearchSection({ section, slug }) {
   const appRow = {
@@ -312,18 +349,19 @@ function OutcomesSection({ section }) {
 }
 
 const SECTION_MAP = {
-  'problem':        ProblemSection,
-  'research':       ResearchSection,
-  'research-quotes':ResearchQuotesSection,
-  'before-after':   BeforeAfterSection,
-  'wireframes':     WireframesSection,
-  'personas':       PersonasSection,
-  'decisions':      DecisionsSection,
-  'decisions-list': DecisionsListSection,
-  'iteration':      IterationSection,
-  'mockup':         MockupSection,
-  'mockup-mobile':  MockupMobileSection,
-  'outcomes':       OutcomesSection,
+  'problem':          ProblemSection,
+  'research':         ResearchSection,
+  'research-quotes':  ResearchQuotesSection,
+  'research-visual':  ResearchVisualSection,
+  'before-after':     BeforeAfterSection,
+  'wireframes':       WireframesSection,
+  'personas':         PersonasSection,
+  'decisions':        DecisionsSection,
+  'decisions-list':   DecisionsListSection,
+  'iteration':        IterationSection,
+  'mockup':           MockupSection,
+  'mockup-mobile':    MockupMobileSection,
+  'outcomes':         OutcomesSection,
 }
 
 // ── Main page ─────────────────────────────────────────────────

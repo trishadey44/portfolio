@@ -99,3 +99,15 @@
   }
   .right { max-width: 400px; }
 }
+
+@media (max-width: 640px) {
+  .right { max-width: 100%; }
+  .photoDecor { display: none; }
+  .facts { gap: 40px; }
+  .title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+}
+
+@media (max-width: 480px) {
+  .facts { grid-template-columns: 1fr; gap: 24px; }
+  .factNumber { font-size: 2.8rem; }
+}

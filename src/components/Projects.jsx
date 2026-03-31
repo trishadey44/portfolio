@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import { HearthSplash, BARTSplash, SimmerSplash, ComponentLibrarySplash } from './CardSplash'
@@ -14,16 +14,31 @@ const SPLASH_MAP = {
 
 export default function Projects() {
   const [index, setIndex] = useState(0)
+  const [animDir, setAnimDir] = useState(null)
+  const [animating, setAnimating] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const total = projects.length
 
-  const prev = () => setIndex(i => Math.max(0, i - 1))
-  const next = () => setIndex(i => Math.min(total - 3, i + 1))
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
-  const canPrev = index > 0
-  const canNext = index < total - 3
+  const go = (dir) => {
+    if (animating) return
+    setAnimDir(dir)
+    setAnimating(true)
+    setTimeout(() => {
+      setIndex(i => dir === 'right' ? (i + 1) % total : (i - 1 + total) % total)
+      setAnimating(false)
+      setAnimDir(null)
+    }, 320)
+  }
 
-  // Visible projects: always show 3
-  const visible = projects.slice(index, index + 3)
+  const count = isMobile ? 1 : 3
+  const visible = Array.from({ length: count }, (_, offset) => projects[(index + offset) % total])
 
   return (
     <section className={`${styles.section} section`} id="projects">
@@ -38,27 +53,35 @@ export default function Projects() {
       </div>
 
       <div className={styles.sliderWrap}>
-        <button
-          className={`${styles.scrollBtn} ${styles.scrollBtnLeft} ${!canPrev ? styles.scrollBtnDisabled : ''}`}
-          onClick={prev}
-          aria-label="Previous"
-          disabled={!canPrev}
-        >‹</button>
+        {!isMobile && (
+          <button className={`${styles.scrollBtn} ${styles.scrollBtnLeft}`} onClick={() => go('left')} aria-label="Previous">‹</button>
+        )}
 
-        <ul className={styles.sliderTrack}>
-          {visible.map((project, i) => (
-            <li key={project.slug} className={styles.sliderCard}>
-              <ProjectCard project={project} i={projects.indexOf(project)} />
-            </li>
-          ))}
-        </ul>
+        <div className={styles.sliderClip}>
+          <ul className={`${styles.sliderTrack} ${animating ? (animDir === 'right' ? styles.slideOutLeft : styles.slideOutRight) : ''}`}>
+            {visible.map((project, i) => (
+              <li key={`${project.slug}-${index}-${i}`} className={styles.sliderCard}>
+                <ProjectCard project={project} i={projects.indexOf(project)} />
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <button
-          className={`${styles.scrollBtn} ${styles.scrollBtnRight} ${!canNext ? styles.scrollBtnDisabled : ''}`}
-          onClick={next}
-          aria-label="Next"
-          disabled={!canNext}
-        >›</button>
+        {!isMobile && (
+          <button className={`${styles.scrollBtn} ${styles.scrollBtnRight}`} onClick={() => go('right')} aria-label="Next">›</button>
+        )}
+
+        {isMobile && (
+          <div className={styles.mobileArrows}>
+            <button className={styles.mobileArrowBtn} onClick={() => go('left')} aria-label="Previous">‹</button>
+            <span className={styles.mobileDots}>
+              {projects.map((_, i) => (
+                <span key={i} className={`${styles.mobileDot} ${i === index ? styles.mobileDotActive : ''}`} />
+              ))}
+            </span>
+            <button className={styles.mobileArrowBtn} onClick={() => go('right')} aria-label="Next">›</button>
+          </div>
+        )}
       </div>
     </section>
   )

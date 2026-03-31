@@ -135,8 +135,12 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .nav { padding: 20px; }
-  .scrolled { padding: 14px 20px; }
+  .nav { padding: 16px 20px; }
+  .scrolled { padding: 12px 20px; }
+  .inner {
+    width: 100%;
+    /* Remove overflow:hidden — it was clipping the burger button */
+  }
   .burger { display: flex; }
   .links {
     position: fixed;
@@ -148,7 +152,9 @@
     gap: 32px;
     transform: translateX(100%);
     transition: transform 0.4s var(--ease-out-expo);
+    z-index: 200;
   }
   .links.open { transform: none; }
   .link { font-size: 1.3rem; }
+  .resumeBtn { font-size: 1.1rem; }
 }

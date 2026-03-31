@@ -217,4 +217,15 @@
   .blob1 { width: 180px; height: 180px; right: -30px; bottom: 80px; }
   .blob2 { width: 90px; height: 90px; right: 140px; bottom: 180px; display: block; }
   .blob3, .blob4 { display: none; }
+  .hero { padding-top: clamp(100px, 18vh, 160px); padding-bottom: 60px; }
+  .headline { font-size: clamp(2.4rem, 10vw, 3.5rem); margin-bottom: 20px; }
+  .sub { font-size: 1rem; margin-bottom: 36px; }
+  .ctas { gap: 14px; }
+  .ctaPrimary, .ctaSecondary { font-size: 0.9rem; }
+  .tag { font-size: 0.68rem; white-space: normal; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .headline { font-size: clamp(2rem, 11vw, 2.8rem); }
+  .roleWrap { font-size: clamp(1.1rem, 6vw, 1.6rem); }
 }
