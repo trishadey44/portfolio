@@ -13,7 +13,26 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close menu on route change
   useEffect(() => { setOpen(false) }, [location])
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+  }, [open])
 
   const links = [
     { label: 'Work',       to: '/#projects' },
@@ -30,22 +49,30 @@ export default function Nav() {
           <img src="/avatar.svg" alt="Trisha" className={styles.logoAvatar} />
         </Link>
 
+        {/* Mobile fullscreen menu */}
         <ul className={`${styles.links} ${open ? styles.open : ''}`}>
+          {/* Close button inside menu */}
+          <button
+            className={styles.closeBtn}
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+
           {links.map(l => (
             <li key={l.label}>
-              <Link to={l.to} className={styles.link}>{l.label}</Link>
+              <Link to={l.to} className={styles.link} onClick={() => setOpen(false)}>{l.label}</Link>
             </li>
           ))}
           <li>
-            <Link
-              to="/resume"
-              className={styles.resumeBtn}
-            >
+            <Link to="/resume" className={styles.resumeBtn} onClick={() => setOpen(false)}>
               Resume ↗
             </Link>
           </li>
         </ul>
 
+        {/* Hamburger — only visible on mobile */}
         <button
           className={`${styles.burger} ${open ? styles.burgerOpen : ''}`}
           onClick={() => setOpen(o => !o)}

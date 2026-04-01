@@ -111,6 +111,29 @@ export const projects = [
         ],
       },
       {
+        type: 'app-screenshots',
+        label: 'The Current App',
+        headline: 'This is what riders are actually using.',
+        body: 'Before redesigning anything, I spent time using the existing BART app the way real riders do. These are screenshots of the live app - not a prototype. This is what 130,000+ daily riders open every day.',
+        screenshots: [
+          {
+            src: '/bart-app/home.png',
+            screen: 'Home Screen',
+            annotation: 'Service alerts dominate the screen before you can see anything useful. The closest station shows "Retrieving Information." There is no live departure data visible without tapping.',
+          },
+          {
+            src: '/bart-app/station.png',
+            screen: 'Station Departures',
+            annotation: 'Departures exist but are buried inside Station Info. The tab layout works, but there is no way to surface this from the home screen. Elevator status is nowhere on this view.',
+          },
+          {
+            src: '/bart-app/trip.png',
+            screen: 'Plan Trip',
+            annotation: 'The advisory banner takes up a third of the screen before you can plan anything. No accessibility preferences. No option to avoid stairs or elevators. From/to fields with no suggestions.',
+          },
+        ],
+      },
+      {
         type: 'before-after',
         label: 'Before and After',
         headline: 'Same information. Completely different experience.',
@@ -201,7 +224,7 @@ export const projects = [
   {
     slug: 'simmer',
     title: 'Simmer',
-    tagline: 'Find exactly what to cook tonight - whatever you have, however long you have',
+    tagline: 'Taking the thought out of "What do I eat tonight"',
     category: 'UX / Product Design',
     year: '2025',
     color: '#E8834A',
@@ -218,18 +241,14 @@ export const projects = [
       accent: '#FF6B35', accentLight: '#FFF0E8', accentMuted: '#FFB08A',
       bg: 'var(--bg)', bgAlt: 'var(--bg-alt)', dark: '#1A1A1A', heroStyle: 'bold',
     },
-    description: 'Simmer is a recipe discovery app built around how people actually cook - not how cookbooks wish they did. You tell it what you have, how much time you have, who you are cooking for, and what you feel like eating. It finds the perfect recipe, walks you through it step by step, and builds your shopping list for next time.',
+    description: 'Simmer is a recipe discovery app built around the way that people actually cook and not just how cookbooks wish they did. You tell it what you have, how much time you have, who you are cooking for, or what you feel like eating. It finds the perfect recipe, walks you through it step-by-step, and builds your shopping list for next time.',
     sections: [
       {
         type: 'problem',
         label: 'Problem Definition',
-        headline: 'The gap between "I want to cook" and "I know what to make" is where dinner plans go to die.',
-        body: 'Cooking at home sounds simple until it is 6pm on a Tuesday. You have half an onion, some pasta, and a vague craving. You open three different recipe apps, none of which know what is in your fridge. You search "quick pasta dinner" and get results that require ingredients you do not have. Thirty minutes later you order takeout.\n\nThe problem is not that people do not want to cook. The problem is that existing recipe apps are built like digital cookbooks: beautiful, browsable, and completely disconnected from the reality of your kitchen, your schedule, and your skill level. Simmer is built around the actual moment of decision.',
-        stats: [
-          { value: '78%', label: 'Of people who plan to cook end up ordering out' },
-          { value: '4.2', label: 'Recipe apps the average person has installed' },
-          { value: '11 min', label: 'Average time lost deciding what to make' },
-        ],
+        headline: 'That gap between wanting to cook and knowing what to make is where dinner plans usually fall apart.',
+        body: 'Cooking at home sounds simple until it is 6pm on a Tuesday and you have half an onion, some pasta, and a vague craving. You open three different recipe apps, none of which know what is in your fridge. You search "quick pasta dinner" and get results that require ingredients you do not have. Thirty minutes later you order takeout.\n\nThe problem is not that people do not want to cook. The problem is that existing recipe apps are built like digital cookbooks: beautiful, browsable, and completely disconnected from the reality of your kitchen, your schedule, and your skill level. Simmer is built around the actual moment of decision.',
+
       },
       {
         type: 'personas',
@@ -262,29 +281,11 @@ export const projects = [
           },
         ],
       },
+
       {
-        type: 'research',
-        label: 'Research and Competitive Analysis',
-        headline: 'We followed 18 people through a full week of dinner decisions.',
-        body: 'Rather than just interviewing users, I ran a week-long diary study with 18 participants across different household types - singles, couples, families, people with dietary restrictions. They logged every meal decision: what they wanted to make, what got in the way, and what they actually ended up doing.',
-        findings: [
-          { quote: '"I have Allrecipes, NYT Cooking, and Pinterest open at the same time and I still cannot decide."', theme: 'Decision fatigue is the real UX problem - too many choices' },
-          { quote: '"I always have to substitute half the ingredients anyway. I wish it just knew what I had."', theme: 'Pantry-first filtering is the most-wanted missing feature' },
-          { quote: '"I started a recipe and it said marinate overnight. Who has time for that?"', theme: 'Time estimates are either missing or wildly inaccurate' },
-          { quote: '"My partner is lactose intolerant and I am trying to eat less meat. Most apps make me filter separately every time."', theme: 'Household dietary profiles should be first-class, not an afterthought' },
-        ],
-        competitors: [
-          { name: 'NYT Cooking', strength: 'Editorial quality, beautiful', weakness: 'No pantry filter, paywall', target: 'Food enthusiasts' },
-          { name: 'Allrecipes', strength: 'Huge database, ratings', weakness: 'Overwhelming, outdated UI', target: 'Home cooks' },
-          { name: 'Yummly', strength: 'Dietary filters', weakness: 'Cluttered, slow, ad-heavy', target: 'Health-conscious cooks' },
-          { name: 'SuperCook', strength: 'Ingredient-based search', weakness: 'Ugly, no cooking mode', target: 'Budget cooks' },
-        ],
-        insight: 'Every recipe app is built for discovery. Nobody built one for the actual moment of cooking.',
-      },
-      {
-        type: 'decisions',
-        label: 'Design Decisions',
-        headline: 'Six decisions that turned a search box into a cooking companion.',
+        type: 'decisions-spotlight',
+        label: 'What It Does',
+        headline: '',
         decisions: [
           { number: '01', title: 'Filters as the homepage, not an afterthought', body: 'In most recipe apps, filters are buried in a corner. In Simmer, filtering is the first thing you see. The home screen is a smart input - a set of tiles where you set your constraints before you see a single recipe. This makes results feel curated, not searched.' },
           { number: '02', title: 'Pantry mode - your fridge is the filter', body: 'Simmer lets you build a persistent pantry profile of what you usually keep on hand. When you open the app, it already knows your staples. Results show what you can make right now, with a clear indicator of any missing ingredients and a one-tap add to your shopping list.' },
@@ -330,37 +331,17 @@ export const projects = [
         ],
       },
       {
-        type: 'outcomes',
+        type: 'design-outcomes',
         label: 'Conclusions',
-        headline: 'People stopped Googling recipes mid-session.',
-        body: 'In usability testing with 14 participants, the pantry filter was unanimously the standout feature. Eleven out of fourteen said they had never seen it done well before. The cooking mode reduced mid-recipe phone distraction by eliminating the need to scroll - participants completed recipes without leaving the app for the first time.\n\nThe two-round iteration process was worth it. The changes from Round 1 alone reduced task completion time on the filter screen by 40%. The tip pattern introduced in Round 2 was called out by four participants as something that made them feel more confident as cooks.',
-        stats: [
-          { value: '11/14', label: 'Said pantry filter was unlike anything they had seen' },
-          { value: '40%', label: 'Faster filter completion after Round 1 changes' },
-          { value: '89%', label: 'Completed a full recipe flow without help' },
-          { value: '4.8/5', label: 'Average satisfaction score across all tasks' },
+        headline: 'What the design got right.',
+        body: 'The strongest signal from testing was not a number. It was behavior: people stopped leaving the app. On every other recipe app, participants would open a browser tab mid-session - to convert a measurement, to Google a technique, to find a substitution. In Simmer, they did not. The information was already there, in the right place, at the right moment.\n\nThe pantry-first model changed the relationship between user and app. Instead of searching through thousands of options, people felt like Simmer already knew them. That shift - from tool to companion - was the clearest design success. The cooking mode carried it further: one step at a time, screen-on, timers built in. The phone became part of the kitchen instead of a distraction in it.',
+        principles: [
+          { icon: '🥬', title: 'Context before content', body: 'Knowing what someone has changes what you show them. The pantry model made every recommendation feel personal, not algorithmic.' },
+          { icon: '⏱️', title: 'Honest constraints build trust', body: 'Showing real time - active, passive, and total - made users feel respected. The hard time limit slider was used by nearly everyone.' },
+          { icon: '📱', title: 'The phone as kitchen tool', body: 'Cooking mode was designed to disappear. No nav, no ads, no distraction. The screen served the cook, not the other way around.' },
         ],
       },
     ],
-    images: [],
-  },
-
-  {
-    slug: 'velours',
-    title: 'VELOURS',
-    tagline: 'A luxury rebrand of the one product every human uses every day - and nobody has ever designed for',
-    category: 'Brand · Packaging · Copywriting',
-    year: '2024',
-    color: '#3D4F3B',
-    tags: ['Packaging Design', 'Brand Identity', 'Copywriting', 'Print'],
-    cardVisual: null,
-    richCaseStudy: false,
-    theme: {
-      accent: '#3D4F3B', accentLight: '#C8D4C6', accentMuted: '#7a8c78',
-      bg: '#FAF7F2', bgAlt: '#F0EBE0', dark: '#3D4F3B', heroStyle: 'warm',
-    },
-    externalPage: '/velours',
-    description: 'The global toilet paper market is worth $82 billion. Nobody has tried to make it beautiful. VELOURS by Atelier Laurent is a full brand, packaging system, and copy suite for a product that spends its whole life in a room no one ever sees.',
     images: [],
   },
 ]

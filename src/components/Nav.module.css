@@ -139,24 +139,46 @@
 @media (max-width: 768px) {
   .nav { padding: 16px 20px; }
   .scrolled { padding: 12px 20px; }
-  .inner {
-    width: 100%;
-    /* Remove overflow:hidden — it was clipping the burger button */
-  }
   .burger { display: flex; }
   .links {
+    display: none;
     position: fixed;
-    inset: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: var(--bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 32px;
-    transform: translateX(100%);
-    transition: transform 0.4s var(--ease-out-expo);
-    z-index: 200;
+    z-index: 999;
+    overflow-y: auto;
+    /* Ensure it covers the full visible area regardless of scroll position */
+    height: 100%;
+    min-height: 100%;
   }
-  .links.open { transform: none; }
+  .links.open { display: flex; }
   .link { font-size: 1.3rem; }
   .resumeBtn { font-size: 1.1rem; }
+}
+
+/* Close button — only visible inside mobile menu */
+.closeBtn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.closeBtn:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .closeBtn { display: block; }
+  /* links needs relative positioning for the absolute close btn */
+  .links { position: fixed; }
 }

@@ -235,6 +235,31 @@ function PersonasSection({ section }) {
   )
 }
 
+// ── Decisions: Spotlight strip (Simmer) ──────────────────────
+function DecisionsSpotlightSection({ section }) {
+  return (
+    <section className={`${styles.richBlock} reveal`}>
+      <span className="label">{section.label}</span>
+      {section.headline && <h2 className={styles.richHeadline}>{section.headline}</h2>}
+      <div className={styles.spotlightList}>
+        {section.decisions.map((d, i) => (
+          <div key={i} className={`${styles.spotlightItem} ${i % 2 === 1 ? styles.spotlightAlt : ''} reveal`}
+            style={{ transitionDelay: `${i * 0.06}s` }}>
+            <div className={styles.spotlightNumWrap}>
+              <span className={styles.spotlightDot} />
+              <div className={styles.spotlightNum}>{d.number}</div>
+            </div>
+            <div className={styles.spotlightContent}>
+              <h3 className={styles.spotlightTitle}>{d.title}</h3>
+              <p className={styles.spotlightBody}>{d.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 // ── Decisions: grid (BART, Simmer) ───────────────────────────
 function DecisionsSection({ section }) {
   return (
@@ -348,20 +373,69 @@ function OutcomesSection({ section }) {
   )
 }
 
+// ── App Screenshots (BART - real app comparison) ──────────────
+function AppScreenshotsSection({ section }) {
+  return (
+    <section className={`${styles.richBlock} reveal`}>
+      <span className="label">{section.label}</span>
+      <h2 className={styles.richHeadline}>{section.headline}</h2>
+      <p className={styles.bodyText}>{section.body}</p>
+      <div className={styles.screenshotsGrid}>
+        {section.screenshots.map((s, i) => (
+          <div key={i} className={`${styles.screenshotItem} reveal`} style={{ transitionDelay: `${i * 0.1}s` }}>
+            <div className={styles.screenshotPhone}>
+              <img src={s.src} alt={s.screen} className={styles.screenshotImg} />
+            </div>
+            <div className={styles.screenshotMeta}>
+              <span className={styles.screenshotScreen}>{s.screen}</span>
+              <p className={styles.screenshotAnnotation}>{s.annotation}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ── Design Outcomes (Simmer - no stat boxes, design principles) ──
+function DesignOutcomesSection({ section }) {
+  return (
+    <section className={`${styles.richBlock} ${styles.outcomeRich} reveal`}>
+      <span className="label">{section.label}</span>
+      <h2 className={styles.richHeadline}>{section.headline}</h2>
+      {section.body.split('\n\n').map((p, i) => <p key={i} className={styles.bodyText}>{p}</p>)}
+      {section.principles && (
+        <div className={styles.principlesGrid}>
+          {section.principles.map((p, i) => (
+            <div key={i} className={`${styles.principleCard} reveal`} style={{ transitionDelay: `${i * 0.08}s` }}>
+              <span className={styles.principleIcon}>{p.icon}</span>
+              <h3 className={styles.principleTitle}>{p.title}</h3>
+              <p className={styles.principleBody}>{p.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
 const SECTION_MAP = {
   'problem':          ProblemSection,
   'research':         ResearchSection,
   'research-quotes':  ResearchQuotesSection,
   'research-visual':  ResearchVisualSection,
+  'app-screenshots':  AppScreenshotsSection,
   'before-after':     BeforeAfterSection,
   'wireframes':       WireframesSection,
   'personas':         PersonasSection,
-  'decisions':        DecisionsSection,
-  'decisions-list':   DecisionsListSection,
+  'decisions':            DecisionsSection,
+  'decisions-list':       DecisionsListSection,
+  'decisions-spotlight':  DecisionsSpotlightSection,
   'iteration':        IterationSection,
   'mockup':           MockupSection,
   'mockup-mobile':    MockupMobileSection,
   'outcomes':         OutcomesSection,
+  'design-outcomes':  DesignOutcomesSection,
 }
 
 // ── Main page ─────────────────────────────────────────────────
