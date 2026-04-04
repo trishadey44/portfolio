@@ -58,20 +58,43 @@ export function BARTSplash() {
 export function SimmerSplash() {
   return (
     <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <rect width="400" height="240" fill="#FFFFFF"/>
-      <rect x="0" y="0" width="400" height="130" fill="#FF6B35"/>
-      <circle cx="200" cy="130" r="72" fill="#FFFFFF"/>
-      <circle cx="200" cy="130" r="62" fill="none" stroke="#FF6B35" strokeWidth="1.5" opacity="0.25"/>
-      <circle cx="200" cy="132" r="44" fill="#FFF5F0"/>
-      <circle cx="200" cy="132" r="30" fill="#FFE8DC"/>
-      <circle cx="200" cy="132" r="16" fill="#FF6B35" opacity="0.2"/>
-      <line x1="195" y1="118" x2="193" y2="110" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-      <line x1="200" y1="116" x2="200" y2="108" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-      <line x1="205" y1="118" x2="207" y2="110" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-      <text x="200" y="68" textAnchor="middle" fontFamily="Georgia, 'Times New Roman', serif" fontSize="42" fontWeight="900" fontStyle="italic" fill="#FFFFFF" letterSpacing="-1">simmer</text>
-      <text x="200" y="215" textAnchor="middle" fontFamily="'Courier New', monospace" fontSize="8.5" fill="#FF6B35" letterSpacing="3">COOK WHAT YOU HAVE</text>
-      <circle cx="110" cy="211" r="2" fill="#FF6B35" opacity="0.4"/>
-      <circle cx="290" cy="211" r="2" fill="#FF6B35" opacity="0.4"/>
+      <defs>
+        <radialGradient id="sim-bg" cx="50%" cy="30%" r="80%">
+          <stop offset="0%" stopColor="#2D1A0E"/>
+          <stop offset="100%" stopColor="#1A0C05"/>
+        </radialGradient>
+        <radialGradient id="sim-glow" cx="50%" cy="70%" r="50%">
+          <stop offset="0%" stopColor="#FF6B35" stopOpacity="0.18"/>
+          <stop offset="100%" stopColor="#FF6B35" stopOpacity="0"/>
+        </radialGradient>
+      </defs>
+      {/* Background */}
+      <rect width="400" height="240" fill="url(#sim-bg)"/>
+      <rect width="400" height="240" fill="url(#sim-glow)"/>
+      {/* Subtle grain texture lines */}
+      <line x1="0" y1="60" x2="400" y2="60" stroke="#FF6B35" strokeWidth="0.3" opacity="0.08"/>
+      <line x1="0" y1="120" x2="400" y2="120" stroke="#FF6B35" strokeWidth="0.3" opacity="0.06"/>
+      <line x1="0" y1="180" x2="400" y2="180" stroke="#FF6B35" strokeWidth="0.3" opacity="0.04"/>
+      {/* Steam wisps */}
+      <path d="M160 148 Q158 136 162 124 Q166 112 164 100" stroke="#FF6B35" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.3"/>
+      <path d="M180 152 Q177 138 181 124 Q185 110 183 96" stroke="#FF6B35" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.22"/>
+      <path d="M200 150 Q197 136 201 122 Q205 108 203 94" stroke="#FF6B35" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.28"/>
+      <path d="M220 152 Q217 138 221 125 Q225 112 223 99" stroke="#FF6B35" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.2"/>
+      <path d="M240 148 Q238 136 242 124 Q246 112 244 100" stroke="#FF6B35" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.25"/>
+      {/* Bowl shape */}
+      <path d="M140 170 Q145 200 200 205 Q255 200 260 170" fill="#FF6B35" opacity="0.12"/>
+      <path d="M140 170 Q145 200 200 205 Q255 200 260 170" fill="none" stroke="#FF6B35" strokeWidth="1.2" opacity="0.4"/>
+      <path d="M150 165 Q200 175 250 165" fill="none" stroke="#FF6B35" strokeWidth="0.8" opacity="0.3"/>
+      {/* Spoon */}
+      <line x1="262" y1="158" x2="290" y2="130" stroke="#FF6B35" strokeWidth="1.8" strokeLinecap="round" opacity="0.5"/>
+      <ellipse cx="256" cy="163" rx="7" ry="5" fill="none" stroke="#FF6B35" strokeWidth="1.4" opacity="0.5"/>
+      {/* Title */}
+      <text x="200" y="80" textAnchor="middle" fontFamily="Georgia, 'Times New Roman', serif" fontSize="44" fontWeight="900" fontStyle="italic" fill="#FF6B35" letterSpacing="-1" opacity="0.95">simmer</text>
+      {/* Rule lines around title */}
+      <line x1="72" y1="58" x2="118" y2="58" stroke="#FF6B35" strokeWidth="0.7" opacity="0.35"/>
+      <line x1="282" y1="58" x2="328" y2="58" stroke="#FF6B35" strokeWidth="0.7" opacity="0.35"/>
+      {/* Subtitle */}
+      <text x="200" y="222" textAnchor="middle" fontFamily="'Courier New', monospace" fontSize="7.5" fill="#FF6B35" letterSpacing="3.5" opacity="0.6">COOK WHAT YOU HAVE</text>
     </svg>
   )
 }
