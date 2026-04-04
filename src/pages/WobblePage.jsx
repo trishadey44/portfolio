@@ -23,15 +23,18 @@ const CHAR_ROWS = [
 ]
 
 function CharGrid({ weight }) {
-  const fontStyle  = weight === 'italic' ? 'italic' : 'normal'
-  const fontWeight = weight === 'bold'   ? 700      : 400
+  const isItalic = weight === 'italic'
+  const fontWeight = weight === 'bold' ? 700 : 400
   return (
     <div className={s.charGrid}>
       {CHAR_ROWS.map(row => (
         <div key={row.label} className={s.charRow}>
           <span className={s.charRowLabel}>{row.label}</span>
           <div className={s.charRowScroll}>
-            <div className={s.charRowText} style={{ fontWeight, fontStyle }}>
+            <div
+              className={s.charRowText}
+              style={{ fontWeight, transform: isItalic ? 'skewX(-10deg)' : 'none' }}
+            >
               {row.chars.split('').map((ch, i) => (
                 <span key={i} className={s.charCell}>{ch}</span>
               ))}
@@ -49,13 +52,16 @@ function SentenceComparison() {
   return (
     <div className={s.sentenceStack}>
       {[
-        { label: 'Wobble Regular — 400', weight: 400, style: 'normal' },
-        { label: 'Wobble Bold — 700',    weight: 700, style: 'normal' },
-        { label: 'Wobble Italic — 400',  weight: 400, style: 'italic' },
+        { label: 'Wobble Regular — 400', fontWeight: 400, italic: false },
+        { label: 'Wobble Bold — 700',    fontWeight: 700, italic: false },
+        { label: 'Wobble Italic — 400',  fontWeight: 400, italic: true  },
       ].map(row => (
         <div key={row.label} className={s.sentenceRow}>
           <span className={s.sentDesc}>{row.label}</span>
-          <p className={s.sentText} style={{ fontWeight: row.weight, fontStyle: row.style }}>
+          <p className={s.sentText} style={{
+            fontWeight: row.fontWeight,
+            transform: row.italic ? 'skewX(-10deg)' : 'none',
+          }}>
             {SENTENCE}
           </p>
         </div>
@@ -87,6 +93,9 @@ export default function WobblePage() {
               A humanist sans-serif with an intentional shake. Three weights. 94 characters.
               Built by hand in Calligrapher, refined in Figma, exported in FontForge.
             </p>
+            <a href="/Wobble.zip" download="Wobble.zip" className={s.heroDownload}>
+              Download Wobble ↓
+            </a>
           </div>
         </div>
       </div>
@@ -222,6 +231,17 @@ export default function WobblePage() {
             </blockquote>
             <p className={s.passionBody}>Typography has been the throughline in every project — from component systems at Salesforce to hand-lettering labels. Building a font forces you to understand letterforms at a level you can't reach by selecting from a dropdown.</p>
             <p className={s.passionBody}>Wobble is a first full release — a set of letters made by hand, with the evidence still in the curves.</p>
+          </div>
+        </section>
+
+        <section className={`${s.section} ${s.sectionAlt}`}>
+          <div className={s.sectionTag}>10 — Download</div>
+          <WobbleTitle className={s.sectionTitlePadded}>Take it with you.</WobbleTitle>
+          <div className={s.downloadWrap}>
+            <p className={s.downloadBody}>All three weights — Regular, Bold, and Italic — as TTF files, ready to install.</p>
+            <a href="/Wobble.zip" download="Wobble.zip" className={s.downloadBtn}>
+              Download Wobble (3 weights) ↓
+            </a>
           </div>
         </section>
 

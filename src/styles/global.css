@@ -1,3 +1,19 @@
+/* ─── Wobble font family ─────────────────────────────── */
+@font-face {
+  font-family: 'Wobble';
+  src: url('/Wobble_11719.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wobble';
+  src: url('/Wobble_11720.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ─── Design Tokens ─────────────────────────────────── */
 :root {
   --bg:         #f7ebd8;
